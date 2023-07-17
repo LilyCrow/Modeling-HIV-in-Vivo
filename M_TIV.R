@@ -56,8 +56,8 @@ parms <- c(s = 34,
 # set the times (full collection of x axis points)
 times <- seq(from=0, to=200, by=1/100)
 # initial values for both predator and prey
-Pstart <- c(T = 0.99999999,
-            I = 11,
+Pstart <- c(T = 5,
+            I = .5,
             V = 0)
 
 # invoke ode - it requires the four things we just defined: the right
@@ -87,16 +87,24 @@ diffeq_result <- as.data.frame(diffeq_result)
 
 # gather (from tidyr) seems to be used widely - it seems to do the
 # massaging of a data frame to make it ready for ggplot()
+
 gathered_result <- gather(diffeq_result, variable, value, -time)
-plot_result <- ggplot(data=gathered_result,
-                      mapping=aes(x=time, y=value, color=variable)) +
-    geom_line(linewidth=2) + theme_classic()
+
+plot_result <- ggplot(data= gathered_result), 
+	        #plot declared equation(s) only
+    #, subset(gathered_result, variable == "T"),
+    
+    mapping=aes(x=time, y=value, color=variable)) +
+    geom_line(linewidth=2) + theme_classic() #+
+
+    #plot each equation on its own graph
+    facet_wrap(~variable, scales = "free_y")
 
 # now save to file
-fname_base <- "result_1_tiv"
+fname_base <- "result_tiv"
 extensions = c("png", "pdf")
 for (ext in extensions) {
     fname <- paste(fname_base, ".", ext, sep="")
-    ggsave(fname, plot_result)
+    ggsave(fname, plot_result, height = 5, width = 9) #height,width of png/ pdf
     print(paste("wrote output to file ", fname))
 }

@@ -92,7 +92,7 @@ plot_result <- ggplot(data=gathered_result,
     geom_line(linewidth=2) + theme_classic()
 
 # now save to file
-fname_base <- "result_3rd_sir"
+fname_base <- "result_sir"
 extensions = c("png", "pdf")
 for (ext in extensions) {
     fname <- paste(fname_base, ".", ext, sep="")
