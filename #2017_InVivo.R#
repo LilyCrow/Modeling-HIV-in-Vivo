@@ -85,7 +85,7 @@ gathered_result <- gather(diffeq_result, variable, value, -time)
 
 plot_result <- ggplot(data = gathered_result,#subset(gathered_result, variable == "TR"), #plot declared equation(s) only
                       mapping=aes(x=time, y=value, color = variable)) +
-                      geom_line(linewidth=1) + theme_classic() +
+                      geom_line(linewidth=1) + theme_classic() #+
 
                       #plot each equation on its own graph
                       facet_wrap(~variable, scales = "free_y")
