@@ -56,7 +56,7 @@ parms <- c(lambda_T_W = 10,
       	   c = 0.000005,
       	   lambda_Z = 20,
       	   mu_Z = 0.06,
-      	   beta = 0.004,
+      	   beta = 0.000005,
       	   mu_Z_A = 0.004)
 	   
 
@@ -88,7 +88,10 @@ plot_result <- ggplot(data = gathered_result,#subset(gathered_result, variable =
                       geom_line(linewidth=1) + theme_classic() +
 
                       #plot each equation on its own graph
-                      facet_wrap(~variable, scales = "free_y")
+    facet_wrap(~variable, scales = "free_y")+
+    coord_cartesian(
+        xlim = NULL,
+        ylim = c(0, NA))
 
 
 		

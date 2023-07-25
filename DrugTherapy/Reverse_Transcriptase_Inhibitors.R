@@ -1,6 +1,13 @@
 library(deSolve)
 library(ggplot2)
 library(tidyr)
+library(dplyr)
+
+
+###############
+#Emtricitabine#
+###############
+
 
 # hiv_func is the function on the right hand side of the
 # differential equation. 
@@ -49,15 +56,44 @@ rti_func <- function(t, RTI, params) {
     list(c(dTW, dTR, dI, dV, dZ, dZA))
 }
 
+C_min <- .064
+C_max <- 1.77
+EC_50_min <- .0013
+EC_50_max <- .64
+Hill_Coefficient <- 1
+
+N_RTI_min = (C_min ^ Hill_Coefficient) / ((C_min ^ Hill_Coefficient) + (EC_50_min ^ Hill_Coefficient))
+N_RTI_max = (C_max ^ Hill_Coefficient) / ((C_max ^ Hill_Coefficient) + (EC_50_max ^ Hill_Coefficient))
+
+
 #parameters
-parms <- c(lambda_T_W = 10,
+parms_min <- c(lambda_T_W = 10,
       	   lambda_T_R = 0.03198,
       	   X_W= 0.000024,
       	   X_R = 0.01,
       	   mu_T_W = 0.01,
       	   mu_T_R = 0.01,
            #
-           N_RTI = 0.65 ,
+           N_RTI = N_RTI_min,
+           #
+      	   mu_I = 0.5,
+      	   epsilon_V = 100,
+      	   mu_V = 3,
+      	   alpha = 0.02,
+      	   c = 0.000005,
+      	   lambda_Z = 20,
+      	   mu_Z = 0.06,
+      	   beta = 0.004,
+      	   mu_Z_A = 0.004)
+
+parms_max <- c(lambda_T_W = 10,
+      	   lambda_T_R = 0.03198,
+      	   X_W= 0.000024,
+      	   X_R = 0.01,
+      	   mu_T_W = 0.01,
+      	   mu_T_R = 0.01,
+           #
+           N_RTI = N_RTI_max,
            #
       	   mu_I = 0.5,
       	   epsilon_V = 100,
@@ -73,29 +109,54 @@ parms <- c(lambda_T_W = 10,
 # initial values
 Pstart <- c(TW = 1000,
        	    TR = 10,
-       	    I = 10,
-            V = 10,
+       	    I = 100,
+            V = 100,
 	    Z = 500,
 	    ZA = 30)
 
 # set the times (full collection of x axis points)
-times <- seq(from=0, to=2000, by= 25)
+times <- seq(from=0, to=1000, by= 15)
 
 
-diffeq_result <- ode(
+diffeq_result_min <- ode(
     func=rti_func,
     y=Pstart,
     times=times,
-    parms=parms)
+    parms=parms_min)
+
+#max
+diffeq_result_max <- ode(
+    func=rti_func,
+    y=Pstart,
+    times=times,
+    parms=parms_max)
 
 
-diffeq_result <- as.data.frame(diffeq_result)
+diffeq_result_min <- as.data.frame(diffeq_result_min)
+diffeq_result_max <- as.data.frame(diffeq_result_max)
 
-gathered_result <- gather(diffeq_result, variable, value, -time)
+gathered_result_min <- gather(diffeq_result_min, variable, value, -time)
+gathered_result_min$type <- "min"
 
-plot_result <- ggplot(data = gathered_result,#subset(gathered_result, variable == "TR"), #plot declared equation(s) only
-                      mapping=aes(x=time, y=value, color = variable)) +
-                      geom_line(linewidth=1) + theme_classic() +
+gathered_result_max <- gather(diffeq_result_max, variable, value, -time)
+gathered_result_max$type <- "max"
+
+gathered_result <- rbind(gathered_result_min, gathered_result_max)
+
+head(gathered_result)
+
+
+gathered_result_wider <- gathered_result %>%
+    pivot_wider(
+        id_cols = c("time", "variable"),
+        names_from = type,
+        values_from = value     
+        )
+
+
+plot_result <- ggplot(data = gathered_result_wider,#subset(gathered_result, variable == "TR"), #plot declared equation(s) only
+                      mapping=aes(x=time, ymin = min, ymax = max, color = variable, fill = variable)) +
+                      geom_ribbon(alpha = .7) + theme_classic() +
 
                       #plot each equation on its own graph
                       facet_wrap(~variable, scales = "free_y")
