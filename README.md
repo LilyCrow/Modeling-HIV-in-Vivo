@@ -1,8 +1,10 @@
 # HIV_ICR
 
-This study aims to model the within host dynamics of HIV. Inside this repository you will find the following four scripts: 2017_InVivo.R, PI.R, RTI.R, and RTI_PI.R.
+This study aims to model the within host dynamics of HIV with a focus on CD4+ T-cells and viral load. Inside this repository you will find the following scripts: In_Vivo.R and RTI.R.
 
-Each script is based upon the equations outlined in "The In Vivo Dynamics of HIV Infection with the Influence of Cytotoxic T Lymphocyte Cells" which can be found here: https://www.hindawi.com/journals/isrn/2017/2124789/. 2017_InVivo.R replicates the plots outlined in "The In Vivo Dynamics of HIV". The other three scripts-- PI.R, RTI.R, and PI_RTI.R-- account for two types of drug therapies in different variations (individually and combined). 
+In_Vivo.R is based upon the equations outlined in "An Optimal Control Approach to HIV Immunology" which can be found here: https://pdfs.semanticscholar.org/022f/3909c2f6a319345ef2d62f3526cdd5dac0ca.pdf. In_Vivo.R replicates equation (1) in "An Optimal Approach" using the parameters from tables (2) and (3). The model replicates the concentration of CD4+ T-cells, infected CD4+ T-cells, viruses, CD8+ T-cells, and activated CD8+ T-cells per mm3 inside an HIV-1 infected person over the first 365 days of infection.
+
+RTI.R builds upon In_Vivo.R by accounting for a reverse transcriptase inhibitor (RTI), a type of antiretroviral therapy used to treat HIV. RTI's interfere with the viruses ability to productively infect a cell, thereby preventing the creation of new viruses. The effectiveness of the drug was calculated based on an industry form of measurement called the EC50 value and the minimum and maximum concentration as a function of time. The RTI used in this model is Emtricitabine. The EC50 values of Emtricitabine can be found here: https://www.accessdata.fda.gov/drugsatfda_docs/label/2008/021500s010,021896s004lbl.pdf  along with the Cmin and Cmax values here:  the Hill Coefficient used in this model is 1, calculated by this paper: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3236558/.
 
 In order to run each script you will need to install an R interpretor (unless you already have one). To do so type
 ```
@@ -17,9 +19,9 @@ R
 into the terminal.
 
 
-To run 2017_InVivo.R type
+To run In_Vivo.R type
 ```
-source("2017_InVivo.R")
+source("In_Vivo.R")
 ```
 into the R interpretor.
 
@@ -43,34 +45,12 @@ open result_hiv.png
 
 To run the model with a protease inhibitor type
 ```
-source("PI.R")
-```
-into the R interpretor.
-Type
-```
-open result_pi.png
-```
-(or .pdf) into the terminal.
-
-To run the model with a reverse transcriptase inhibitor type
-```
 source("RTI.R")
 ```
 into the R interpretor.
 Type
 ```
 open result_rti.png
-```
-(or .pdf) into the terminal.
-
-To run the model with combination therapy (a PI and an RTI) type
-```
-source("PI_RTI.R")
-```
-into the R interpretor.
-Type
-```
-open result_cARV.png
 ```
 (or .pdf) into the terminal.
 
