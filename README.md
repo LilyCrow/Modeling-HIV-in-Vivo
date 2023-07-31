@@ -38,9 +38,9 @@ will be printed out.
 
 Type
 ```
-open result_hiv.png
+open result_ocm.png
 ```
-(or result_hiv.pdf) to view the plot.
+(or result_ocm.pdf) to view the plot.
 
 
 To run the model with a protease inhibitor type
