@@ -56,8 +56,8 @@ Hill_Coefficient <- 3
 N_PI_min = (C_min ^ Hill_Coefficient) / ((C_min ^ Hill_Coefficient) + (EC_50_min ^ Hill_Coefficient))
 N_PI_max = (C_max ^ Hill_Coefficient) / ((C_max ^ Hill_Coefficient) + (EC_50_max ^ Hill_Coefficient))
 
-#N_PI_min = .2
-#N_PI_max = .8
+N_PI_min = .2
+N_PI_max = .3
 
 #parameters
 parms_min <- c(mu_x = 0.02,
@@ -147,7 +147,7 @@ plot_result <- ggplot(data = gathered_result,#subset(gathered_result, variable =
 		
 
 #save to file
-fname_base <- "result_ocm_pi"
+fname_base <- "result_pi_2"
 extensions = c("png", "pdf")
 for (ext in extensions) {
     fname <- paste(fname_base, ".", ext, sep="")
