@@ -114,19 +114,19 @@ diffeq_result_min <- as.data.frame(diffeq_result_min)
 diffeq_result_max <- as.data.frame(diffeq_result_max)
 
 gathered_result_min <- gather(diffeq_result_min, variable, value, -time)
-gathered_result_min$type <- "Min"
+gathered_result_min$type <- "min"
 
 gathered_result_max <- gather(diffeq_result_max, variable, value, -time)
-gathered_result_max$type <- "Max"
+gathered_result_max$type <- "max"
 
 gathered_result <- rbind(gathered_result_min, gathered_result_max)
 gathered_result$variable[gathered_result$variable == "T"] <- "CD4+ T-Cells"
 gathered_result$variable[gathered_result$variable == "I"] <- "HIV Infected T-Cells"
-gathered_result$variable[gathered_result$variable == "V"] <- "Virions"
+gathered_result$variable[gathered_result$variable == "V"] <- "Viral Load"
 gathered_result$variable[gathered_result$variable == "Z"] <- "CD8+ T-Cells"
 gathered_result$variable[gathered_result$variable == "ZA"] <- "Activated CD8+ T-Cells"
 
-gathered_result$variable <- factor(gathered_result$variable, levels = c("CD4+ T-Cells", "HIV Infected T-Cells", "Virions",
+gathered_result$variable <- factor(gathered_result$variable, levels = c("CD4+ T-Cells", "HIV Infected T-Cells", "Viral Load",
                                                                         "CD8+ T-Cells", "Activated CD8+ T-Cells"))
 
 gathered_result_wider <- gathered_result %>%
@@ -157,10 +157,11 @@ plot_result_test <- ggplot(data = gathered_result, #subset(gathered_result, vari
     xlab("Time (days)")+
     
                       #geom_ribbon(alpha = .7) +
-                      theme_classic() +
+    theme_classic() +
+    theme(legend.position = "bottom") +
 
                       #plot each equation on its own graph
-                      facet_wrap(~variable, scales = "free_y")+
+                      facet_wrap(~variable, scales = "free_y")+#, ncol = 1)+
                       coord_cartesian(
                       xlim = NULL,
                       ylim = c(0, NA))
@@ -176,7 +177,7 @@ plot_result_cd4 <- ggplot(data = subset(gathered_result, variable == "CD4+ T-Cel
                       theme_classic() +
 
                       #plot each equation on its own graph
-                      facet_wrap(~variable, scales = "free_y")+
+                      #facet_wrap(~variable, scales = "free_y")+
                       coord_cartesian(
                       xlim = NULL,
                       ylim = c(0, NA))

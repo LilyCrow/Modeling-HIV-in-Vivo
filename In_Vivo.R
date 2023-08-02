@@ -113,36 +113,35 @@ gathered_result <- gather(diffeq_result, variable, value, -time)
 #This provides each variable, and therefore each graph, with a descriptive title.
 gathered_result$variable[gathered_result$variable == "T"] <-  "CD4+ T-Cells"
 gathered_result$variable[gathered_result$variable == "I"] <-  "HIV Infected T-Cells"
-gathered_result$variable[gathered_result$variable == "V"] <-  "Virions"
+gathered_result$variable[gathered_result$variable == "V"] <-  "Viral Load"
 gathered_result$variable[gathered_result$variable == "Z"] <-  "CD8+ T-Cells"
 gathered_result$variable[gathered_result$variable == "ZA"] <- "Activated CD8+ T-Cells"
 
 #The default order of ggplot2 is alphabetic, the factor() function enables 
 #you to change the order of the plots into something more logical
 #or relevant to your purposes. 
-gathered_result$variable <- factor(gathered_result$variable, levels = c("CD4+ T-Cells", "HIV Infected T-Cells", "Virions",
+gathered_result$variable <- factor(gathered_result$variable, levels = c("CD4+ T-Cells", "HIV Infected T-Cells", "Viral Load",
                                                                         "CD8+ T-Cells", "Activated CD8+ T-Cells"))
 
 
 #Now plot the data and save it in a new variable: plot_result.
 plot_result <- ggplot(data = gathered_result,
                       mapping=aes(x=time, y=value, color = variable)) +
-                      geom_line(linewidth = 0.5) + #linewidth
+                      geom_line(linewidth = 1) + #linewidth
                       theme_classic() + #ggplot has several different themes
                       #that can be added to a plot here we are using "classic"
-
-                      #TODO: scale_color_manual("Type of Cell", values = variable)+
-
+    
+                      theme(legend.position = "none") +
                       ylab("Concentration (mm3)")+ #Y-axis title
                       xlab("Time(days)")+ #X-axis title
-                      facet_wrap(~variable, scales = "free_y") + #plot each equation on its own graph
+                      facet_wrap(~variable, scales = "free_y")#, ncol = 1) + #plot each equation on its own graph
                       coord_cartesian(
                           xlim = NULL,
                           ylim = c(0, NA)) #begin each plot at y = 0
 		
 
 #Save image to file
-fname_base <- "result_ocm" #name of file
+fname_base <- "result_ocm_1col" #name of file
 extensions = c("png", "pdf") #file extension
 for (ext in extensions) {
     fname <- paste(fname_base, ".", ext, sep="")
