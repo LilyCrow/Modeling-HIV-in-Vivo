@@ -1,0 +1,1010 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{OCM}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{6}{}{%
+        {{hash=20eefe99682af13bbe6c8926da9e11ad}{%
+           family={Arruda},
+           familyi={A\bibinitperiod},
+           given={Edilson\bibnamedelima F},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=844477db4dc50fe14308f17ed2e2c730}{%
+           family={Dias},
+           familyi={D\bibinitperiod},
+           given={Claudia\bibnamedelima M},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=7f651f688125a2d52cdcc339710976d2}{%
+           family={Magalhães},
+           familyi={M\bibinitperiod},
+           given={Camila\bibnamedelima V},
+           giveni={C\bibinitperiod\bibinitdelim V\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=fedbfbe99f340d17e8470f631f53f43c}{%
+           family={Pastore},
+           familyi={P\bibinitperiod},
+           given={Dayse\bibnamedelima H},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=d53214edf101c1d72cb28f1d75b6fa40}{%
+           family={Thomé},
+           familyi={T\bibinitperiod},
+           given={Roberto\bibnamedelima CA},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=5e17da19cfd20d51118d050dd5961d03}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Hyun\bibnamedelima Mo},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Scientific Research Publishing}%
+      }
+      \strng{namehash}{2bc0122e0b1e000f3aede976cfc050a9}
+      \strng{fullhash}{4ff5db689568b0647ea264b74ce93916}
+      \strng{bibnamehash}{2bc0122e0b1e000f3aede976cfc050a9}
+      \strng{authorbibnamehash}{2bc0122e0b1e000f3aede976cfc050a9}
+      \strng{authornamehash}{2bc0122e0b1e000f3aede976cfc050a9}
+      \strng{authorfullhash}{4ff5db689568b0647ea264b74ce93916}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied Mathematics}
+      \field{number}{06}
+      \field{title}{An optimal control approach to HIV immunology}
+      \field{volume}{6}
+      \field{year}{2015}
+      \field{pages}{1115}
+      \range{pages}{1}
+      \verb{urlraw}
+      \verb https://www.scirp.org/html/21-7402738_57139.htm
+      \endverb
+      \verb{url}
+      \verb https://www.scirp.org/html/21-7402738_57139.htm
+      \endverb
+    \endentry
+    \entry{Cmin/max}{article}{}
+      \name{author}{4}{}{%
+        {{hash=c994d1bf9a1e4655022f6df099ed8bdc}{%
+           family={Blum},
+           familyi={B\bibinitperiod},
+           given={M\bibnamedelima Robert},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=229366adbb61cd1b7ea482366c661ae0}{%
+           family={Chittick},
+           familyi={C\bibinitperiod},
+           given={Gregory\bibnamedelima E},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=2dcc2b441487b039df55b50e7c91101a}{%
+           family={Begley},
+           familyi={B\bibinitperiod},
+           given={John\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ea23608d3c7f005ac11f92aea29541fb}{%
+           family={Zong},
+           familyi={Z\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{ef75e97477899b753de603a2f3a30ac0}
+      \strng{fullhash}{3b3a82e3274eb02c73ca7baf95274b78}
+      \strng{bibnamehash}{ef75e97477899b753de603a2f3a30ac0}
+      \strng{authorbibnamehash}{ef75e97477899b753de603a2f3a30ac0}
+      \strng{authornamehash}{ef75e97477899b753de603a2f3a30ac0}
+      \strng{authorfullhash}{3b3a82e3274eb02c73ca7baf95274b78}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Clinical Pharmacology}
+      \field{number}{6}
+      \field{title}{Steady-state pharmacokinetics of emtricitabine and tenofovir disoproxil fumarate administered alone and in combination in healthy volunteers}
+      \field{volume}{47}
+      \field{year}{2007}
+      \field{pages}{751\bibrangedash 759}
+      \range{pages}{9}
+    \endentry
+    \entry{callaway2002hiv}{article}{}
+      \name{author}{2}{}{%
+        {{hash=81df36c7f2108db7d47e8de999e11c70}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Duncan\bibnamedelima S},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=765627db3be030b6a298391ae8f35ed8}{%
+           family={Perelson},
+           familyi={P\bibinitperiod},
+           given={Alan\bibnamedelima S},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{202b80924f8d08cf5813bd1f79ddb70d}
+      \strng{fullhash}{202b80924f8d08cf5813bd1f79ddb70d}
+      \strng{bibnamehash}{202b80924f8d08cf5813bd1f79ddb70d}
+      \strng{authorbibnamehash}{202b80924f8d08cf5813bd1f79ddb70d}
+      \strng{authornamehash}{202b80924f8d08cf5813bd1f79ddb70d}
+      \strng{authorfullhash}{202b80924f8d08cf5813bd1f79ddb70d}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bulletin of mathematical biology}
+      \field{number}{1}
+      \field{title}{HIV-1 infection and low steady state viral loads}
+      \field{volume}{64}
+      \field{year}{2002}
+      \field{pages}{29\bibrangedash 64}
+      \range{pages}{36}
+    \endentry
+    \entry{drugEfficacy}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c06a64652491d7a3abc20bc3232a6d2a}{%
+           family={Ciupe},
+           familyi={C\bibinitperiod},
+           given={Stanca\bibnamedelima M},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=c5efb8cc8dfe5c413741898d004da3cc}{%
+           family={Heffernan},
+           familyi={H\bibinitperiod},
+           given={Jane\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{4eb0b0e7c788b8b68ef27f85f679723a}
+      \strng{fullhash}{4eb0b0e7c788b8b68ef27f85f679723a}
+      \strng{bibnamehash}{4eb0b0e7c788b8b68ef27f85f679723a}
+      \strng{authorbibnamehash}{4eb0b0e7c788b8b68ef27f85f679723a}
+      \strng{authornamehash}{4eb0b0e7c788b8b68ef27f85f679723a}
+      \strng{authorfullhash}{4eb0b0e7c788b8b68ef27f85f679723a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Infectious Disease Modelling}
+      \field{number}{2}
+      \field{title}{In-host modeling}
+      \field{volume}{2}
+      \field{year}{2017}
+      \field{pages}{188\bibrangedash 202}
+      \range{pages}{15}
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2468042717300039
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2468042717300039
+      \endverb
+    \endentry
+    \entry{CDC}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{2}{}{%
+        {{hash=81b295390fba35a357cbfd1ef0072ed8}{%
+           family={Disease\bibnamedelima Control},
+           familyi={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Centers},
+           giveni={C\bibinitperiod},
+           prefix={for},
+           prefixi={f\bibinitperiod}}}%
+        {{hash=a45c9caab3071f09886a14a4492856e7}{%
+           family={(CDC},
+           familyi={(\bibinitperiod},
+           given={Prevention},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa3d5a7edf42abf0101d78d982a9b7c8}
+      \strng{fullhash}{fa3d5a7edf42abf0101d78d982a9b7c8}
+      \strng{bibnamehash}{fa3d5a7edf42abf0101d78d982a9b7c8}
+      \strng{authorbibnamehash}{fa3d5a7edf42abf0101d78d982a9b7c8}
+      \strng{authornamehash}{fa3d5a7edf42abf0101d78d982a9b7c8}
+      \strng{authorfullhash}{fa3d5a7edf42abf0101d78d982a9b7c8}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MMWR. Morbidity and mortality weekly report}
+      \field{number}{21}
+      \field{title}{HIV and AIDS--United States, 1981-2000}
+      \field{volume}{50}
+      \field{year}{2001}
+      \field{pages}{430\bibrangedash 434}
+      \range{pages}{5}
+    \endentry
+    \entry{Fauci}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b0b8f2bdfc443368c0f6116560ce286a}{%
+           family={Fauci},
+           familyi={F\bibinitperiod},
+           given={Anthony\bibnamedelima S},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group US New York}%
+      }
+      \strng{namehash}{b0b8f2bdfc443368c0f6116560ce286a}
+      \strng{fullhash}{b0b8f2bdfc443368c0f6116560ce286a}
+      \strng{bibnamehash}{b0b8f2bdfc443368c0f6116560ce286a}
+      \strng{authorbibnamehash}{b0b8f2bdfc443368c0f6116560ce286a}
+      \strng{authornamehash}{b0b8f2bdfc443368c0f6116560ce286a}
+      \strng{authorfullhash}{b0b8f2bdfc443368c0f6116560ce286a}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature medicine}
+      \field{number}{7}
+      \field{title}{HIV and AIDS: 20 years of science}
+      \field{volume}{9}
+      \field{year}{2003}
+      \field{pages}{839\bibrangedash 843}
+      \range{pages}{5}
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/nm0703-839
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/nm0703-839
+      \endverb
+    \endentry
+    \entry{ganusov2013mathematical}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4ac65f61620e0c21d0866f84c52b0920}{%
+           family={Ganusov},
+           familyi={G\bibinitperiod},
+           given={Vitaly\bibnamedelima V},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=09bb95fa57d17304a4f66e02a6114335}{%
+           family={Neher},
+           familyi={N\bibinitperiod},
+           given={Richard\bibnamedelima A},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=765627db3be030b6a298391ae8f35ed8}{%
+           family={Perelson},
+           familyi={P\bibinitperiod},
+           given={Alan\bibnamedelima S},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{4e0e02c81a89910ca527b242fb7e03e8}
+      \strng{fullhash}{4e0e02c81a89910ca527b242fb7e03e8}
+      \strng{bibnamehash}{4e0e02c81a89910ca527b242fb7e03e8}
+      \strng{authorbibnamehash}{4e0e02c81a89910ca527b242fb7e03e8}
+      \strng{authornamehash}{4e0e02c81a89910ca527b242fb7e03e8}
+      \strng{authorfullhash}{4e0e02c81a89910ca527b242fb7e03e8}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Statistical Mechanics: Theory and Experiment}
+      \field{number}{01}
+      \field{title}{Mathematical modeling of escape of HIV from cytotoxic T lymphocyte responses}
+      \field{volume}{2013}
+      \field{year}{2013}
+      \field{pages}{P01010}
+      \range{pages}{-1}
+    \endentry
+    \entry{EC50}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=df165ba36f68020cd8f4bf39a59a4a1e}{%
+           family={Gilead\bibnamedelima Sciences},
+           familyi={G\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Inc},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Gilead Sciences, Inc}%
+      }
+      \strng{namehash}{df165ba36f68020cd8f4bf39a59a4a1e}
+      \strng{fullhash}{df165ba36f68020cd8f4bf39a59a4a1e}
+      \strng{bibnamehash}{df165ba36f68020cd8f4bf39a59a4a1e}
+      \strng{authorbibnamehash}{df165ba36f68020cd8f4bf39a59a4a1e}
+      \strng{authornamehash}{df165ba36f68020cd8f4bf39a59a4a1e}
+      \strng{authorfullhash}{df165ba36f68020cd8f4bf39a59a4a1e}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{Emtriva}
+      \field{year}{2007}
+      \verb{urlraw}
+      \verb https://www.accessdata.fda.gov/drugsatfda_docs/label/2008/021500s010,021896s004lbl.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.accessdata.fda.gov/drugsatfda_docs/label/2008/021500s010,021896s004lbl.pdf
+      \endverb
+    \endentry
+    \entry{LookBack}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d45ef67cc4dc1fedf404228e57012d28}{%
+           family={Greene},
+           familyi={G\bibinitperiod},
+           given={Warner\bibnamedelima C.},
+           giveni={W\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{d45ef67cc4dc1fedf404228e57012d28}
+      \strng{fullhash}{d45ef67cc4dc1fedf404228e57012d28}
+      \strng{bibnamehash}{d45ef67cc4dc1fedf404228e57012d28}
+      \strng{authorbibnamehash}{d45ef67cc4dc1fedf404228e57012d28}
+      \strng{authornamehash}{d45ef67cc4dc1fedf404228e57012d28}
+      \strng{authorfullhash}{d45ef67cc4dc1fedf404228e57012d28}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract Since breaking onto the scene 26 years ago, HIV has proven an indefatigable foe. Over 60 million people have been infected with this retrovirus, and 25 million have already died of AIDS. HIV infection is hitting the hardest in the developing world 1. Tragically, 1600 babies continue to acquire HIV every day from their infected mothers. Over 12 million children have also been orphaned by AIDS, and this number will likely double by 2010. With these sobering statistics as a backdrop, this feature traces the history of the devastating HIV/AIDS pandemic and offers a view for what the future may hold.}
+      \field{journaltitle}{European Journal of Immunology}
+      \field{number}{S1}
+      \field{title}{A history of AIDS: Looking back to see ahead}
+      \field{volume}{37}
+      \field{year}{2007}
+      \field{pages}{S94\bibrangedash S102}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.1002/eji.200737441
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/eji.200737441
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/eji.200737441
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/eji.200737441
+      \endverb
+      \keyw{AIDS,Drug design/discovery,Global pandemic,HIV,Infectious diseases}
+    \endentry
+    \entry{Modeling3Stages}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d7ec63687cee4a77769195ccdfa60786}{%
+           family={Hernandez-Vargas},
+           familyi={H\bibinithyphendelim V\bibinitperiod},
+           given={Esteban\bibnamedelima A},
+           giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4bf5c13a8304b45564959d188d19e750}{%
+           family={Middleton},
+           familyi={M\bibinitperiod},
+           given={Richard\bibnamedelima H},
+           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{f3f87aa6dc081db772c96d62620adb33}
+      \strng{fullhash}{f3f87aa6dc081db772c96d62620adb33}
+      \strng{bibnamehash}{f3f87aa6dc081db772c96d62620adb33}
+      \strng{authorbibnamehash}{f3f87aa6dc081db772c96d62620adb33}
+      \strng{authornamehash}{f3f87aa6dc081db772c96d62620adb33}
+      \strng{authorfullhash}{f3f87aa6dc081db772c96d62620adb33}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of theoretical biology}
+      \field{title}{Modeling the three stages in HIV infection}
+      \field{volume}{320}
+      \field{year}{2013}
+      \field{pages}{33\bibrangedash 40}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0022519312006170
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0022519312006170
+      \endverb
+    \endentry
+    \entry{CD8}{incollection}{}
+      \name{author}{4}{}{%
+        {{hash=8c5da7eb67409ba75a34bfea251d4414}{%
+           family={Janeway\bibnamedelima Jr},
+           familyi={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Charles\bibnamedelima A},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0bd2c7cd52906dd843a5e4e6e3be050a}{%
+           family={Travers},
+           familyi={T\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=5e282cb34f900f753e8845e2fb0f5304}{%
+           family={Walport},
+           familyi={W\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=24a147d9080bef171246a7acc4df0bde}{%
+           family={Shlomchik},
+           familyi={S\bibinitperiod},
+           given={Mark\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Garland Science}%
+      }
+      \strng{namehash}{e8fe1d8355bae40fe43346b7b139b513}
+      \strng{fullhash}{e7edf7d8e4000f97a11157bd9a646112}
+      \strng{bibnamehash}{e8fe1d8355bae40fe43346b7b139b513}
+      \strng{authorbibnamehash}{e8fe1d8355bae40fe43346b7b139b513}
+      \strng{authornamehash}{e8fe1d8355bae40fe43346b7b139b513}
+      \strng{authorfullhash}{e7edf7d8e4000f97a11157bd9a646112}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Immunobiology: The Immune System in Health and Disease. 5th edition}
+      \field{title}{T cell-mediated cytotoxicity}
+      \field{year}{2001}
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/books/NBK27101/#:~:text=Cytotoxic%20CD8%20T%20cells%20carry,which%20the%20granzymes%20can%20enter.
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/books/NBK27101/#:~:text=Cytotoxic%20CD8%20T%20cells%20carry,which%20the%20granzymes%20can%20enter.
+      \endverb
+    \endentry
+    \entry{jhu}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=cd5a73a06f50827f6cc52da9f6d8fcf2}{%
+           family={Kruse\bibnamedelima Thomas},
+           familyi={K\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Karen},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Johns Hopkins: Bloomberg School of Public Health}%
+      }
+      \strng{namehash}{cd5a73a06f50827f6cc52da9f6d8fcf2}
+      \strng{fullhash}{cd5a73a06f50827f6cc52da9f6d8fcf2}
+      \strng{bibnamehash}{cd5a73a06f50827f6cc52da9f6d8fcf2}
+      \strng{authorbibnamehash}{cd5a73a06f50827f6cc52da9f6d8fcf2}
+      \strng{authornamehash}{cd5a73a06f50827f6cc52da9f6d8fcf2}
+      \strng{authorfullhash}{cd5a73a06f50827f6cc52da9f6d8fcf2}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{The Other Time a U.S. President Withheld WHO Funds}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://publichealth.jhu.edu/2020/the-other-time-a-us-president-withheld-who-funds
+      \endverb
+      \verb{url}
+      \verb https://publichealth.jhu.edu/2020/the-other-time-a-us-president-withheld-who-funds
+      \endverb
+    \endentry
+    \entry{mclean2023infectious}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=4d4e6cb51f8949b43d79bf20c692b761}{%
+           family={McLean},
+           familyi={M\bibinitperiod},
+           given={Angela\bibnamedelima R},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{4d4e6cb51f8949b43d79bf20c692b761}
+      \strng{fullhash}{4d4e6cb51f8949b43d79bf20c692b761}
+      \strng{bibnamehash}{4d4e6cb51f8949b43d79bf20c692b761}
+      \strng{authorbibnamehash}{4d4e6cb51f8949b43d79bf20c692b761}
+      \strng{authornamehash}{4d4e6cb51f8949b43d79bf20c692b761}
+      \strng{authorfullhash}{4d4e6cb51f8949b43d79bf20c692b761}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Infectious diseases}
+      \field{title}{Infectious disease modeling}
+      \field{year}{2023}
+      \field{pages}{9\bibrangedash 20}
+      \range{pages}{12}
+    \endentry
+    \entry{Koop}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c14e5247aa6c62f0530b770a763f0490}{%
+           family={{National Library of Medicine}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{c14e5247aa6c62f0530b770a763f0490}
+      \strng{fullhash}{c14e5247aa6c62f0530b770a763f0490}
+      \strng{bibnamehash}{c14e5247aa6c62f0530b770a763f0490}
+      \strng{authorbibnamehash}{c14e5247aa6c62f0530b770a763f0490}
+      \strng{authornamehash}{c14e5247aa6c62f0530b770a763f0490}
+      \strng{authorfullhash}{c14e5247aa6c62f0530b770a763f0490}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Last accessed 27 July 2023}
+      \field{title}{AIDS, the Surgeon General, and the Politics of Public Health}
+      \verb{urlraw}
+      \verb https://profiles.nlm.nih.gov/spotlight/qq/feature/aids
+      \endverb
+      \verb{url}
+      \verb https://profiles.nlm.nih.gov/spotlight/qq/feature/aids
+      \endverb
+    \endentry
+    \entry{HIVinfo}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3f2748ed54e4694cdc5898978a8a338c}{%
+           family={{NIH Office of AIDS Research}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{3f2748ed54e4694cdc5898978a8a338c}
+      \strng{fullhash}{3f2748ed54e4694cdc5898978a8a338c}
+      \strng{bibnamehash}{3f2748ed54e4694cdc5898978a8a338c}
+      \strng{authorbibnamehash}{3f2748ed54e4694cdc5898978a8a338c}
+      \strng{authornamehash}{3f2748ed54e4694cdc5898978a8a338c}
+      \strng{authorfullhash}{3f2748ed54e4694cdc5898978a8a338c}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Last accessed 28 July 2023}
+      \field{title}{The Stages of HIV Infection}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://hivinfo.nih.gov/understanding-hiv/fact-sheets/stages-hiv-infection
+      \endverb
+      \verb{url}
+      \verb https://hivinfo.nih.gov/understanding-hiv/fact-sheets/stages-hiv-infection
+      \endverb
+    \endentry
+    \entry{GSU}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5eb425dfb6f4265d439c74294b7c0c6f}{%
+           family={{Out in the Archives: Gender and Sexuality Collections at Georgia Sate University}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{5eb425dfb6f4265d439c74294b7c0c6f}
+      \strng{fullhash}{5eb425dfb6f4265d439c74294b7c0c6f}
+      \strng{bibnamehash}{5eb425dfb6f4265d439c74294b7c0c6f}
+      \strng{authorbibnamehash}{5eb425dfb6f4265d439c74294b7c0c6f}
+      \strng{authornamehash}{5eb425dfb6f4265d439c74294b7c0c6f}
+      \strng{authorfullhash}{5eb425dfb6f4265d439c74294b7c0c6f}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Last accessed 27 July 2023}
+      \field{title}{Reagan's Response}
+      \verb{urlraw}
+      \verb https://exhibits.library.gsu.edu/out-in-the-archives/hiv-aids/reagans-response/
+      \endverb
+      \verb{url}
+      \verb https://exhibits.library.gsu.edu/out-in-the-archives/hiv-aids/reagans-response/
+      \endverb
+    \endentry
+    \entry{TIVdiagram}{article}{}
+      \name{author}{1}{}{%
+        {{hash=765627db3be030b6a298391ae8f35ed8}{%
+           family={Perelson},
+           familyi={P\bibinitperiod},
+           given={Alan\bibnamedelima S},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{765627db3be030b6a298391ae8f35ed8}
+      \strng{fullhash}{765627db3be030b6a298391ae8f35ed8}
+      \strng{bibnamehash}{765627db3be030b6a298391ae8f35ed8}
+      \strng{authorbibnamehash}{765627db3be030b6a298391ae8f35ed8}
+      \strng{authornamehash}{765627db3be030b6a298391ae8f35ed8}
+      \strng{authorfullhash}{765627db3be030b6a298391ae8f35ed8}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature reviews immunology}
+      \field{number}{1}
+      \field{title}{Modelling viral and immune system dynamics}
+      \field{volume}{2}
+      \field{year}{2002}
+      \field{pages}{28\bibrangedash 36}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/nri700
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/nri700
+      \endverb
+    \endentry
+    \entry{hillCoefficient}{article}{}
+      \name{author}{2}{}{%
+        {{hash=765627db3be030b6a298391ae8f35ed8}{%
+           family={Perelson},
+           familyi={P\bibinitperiod},
+           given={Alan\bibnamedelima S},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=80623a98b2feb94be5a61be60ee92acd}{%
+           family={Deeks},
+           familyi={D\bibinitperiod},
+           given={Steven\bibnamedelima G},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{0f0d23b4e3ff254e43ed87aeb00db990}
+      \strng{fullhash}{0f0d23b4e3ff254e43ed87aeb00db990}
+      \strng{bibnamehash}{0f0d23b4e3ff254e43ed87aeb00db990}
+      \strng{authorbibnamehash}{0f0d23b4e3ff254e43ed87aeb00db990}
+      \strng{authornamehash}{0f0d23b4e3ff254e43ed87aeb00db990}
+      \strng{authorfullhash}{0f0d23b4e3ff254e43ed87aeb00db990}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science translational medicine}
+      \field{number}{91}
+      \field{title}{Drug effectiveness explained: the mathematics of antiviral agents for HIV}
+      \field{volume}{3}
+      \field{year}{2011}
+      \field{pages}{91ps30\bibrangedash 91ps30}
+      \range{pages}{-1}
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3236558/
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3236558/
+      \endverb
+    \endentry
+    \entry{perelson1999}{article}{}
+      \name{author}{2}{}{%
+        {{hash=765627db3be030b6a298391ae8f35ed8}{%
+           family={Perelson},
+           familyi={P\bibinitperiod},
+           given={Alan\bibnamedelima S},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=a32a19b1ccc6808030975618b2af7f7b}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={Patrick\bibnamedelima W},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SIAM}%
+      }
+      \strng{namehash}{9801cd9c7091c7d70c02c3f149162749}
+      \strng{fullhash}{9801cd9c7091c7d70c02c3f149162749}
+      \strng{bibnamehash}{9801cd9c7091c7d70c02c3f149162749}
+      \strng{authorbibnamehash}{9801cd9c7091c7d70c02c3f149162749}
+      \strng{authornamehash}{9801cd9c7091c7d70c02c3f149162749}
+      \strng{authorfullhash}{9801cd9c7091c7d70c02c3f149162749}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SIAM review}
+      \field{number}{1}
+      \field{title}{Mathematical analysis of HIV-1 dynamics in vivo}
+      \field{volume}{41}
+      \field{year}{1999}
+      \field{pages}{3\bibrangedash 44}
+      \range{pages}{42}
+      \verb{urlraw}
+      \verb https://epubs.siam.org/doi/abs/10.1137/S0036144598335107?casa_token=A_B5WCqlPqcAAAAA:dKZMgTppDHgSfbh5mu_mv2gFIFmSXkuq10iKOYM4FPk6475DCbpj7Vvc3PF1nfWT3I7UF3Pxr5vj
+      \endverb
+      \verb{url}
+      \verb https://epubs.siam.org/doi/abs/10.1137/S0036144598335107?casa_token=A_B5WCqlPqcAAAAA:dKZMgTppDHgSfbh5mu_mv2gFIFmSXkuq10iKOYM4FPk6475DCbpj7Vvc3PF1nfWT3I7UF3Pxr5vj
+      \endverb
+    \endentry
+    \entry{ART}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9b68dc30efe96acd8ae1ca170e85d7c2}{%
+           family={Providers\bibnamedelimb of\bibnamedelimb AIDS\bibnamedelima Care},
+           familyi={P\bibinitperiod\bibinitdelim o\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={International\bibnamedelima Association},
+           giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \strng{fullhash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \strng{bibnamehash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \strng{authorbibnamehash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \strng{authornamehash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \strng{authorfullhash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \field{extraname}{1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Last accessed 30 July 2023}
+      \field{title}{Antiretroviral Therapy}
+      \verb{urlraw}
+      \verb https://www.iapac.org/fact-sheet/antiretroviral-therapy-art/
+      \endverb
+      \verb{url}
+      \verb https://www.iapac.org/fact-sheet/antiretroviral-therapy-art/
+      \endverb
+    \endentry
+    \entry{HIVlifeCycle}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9b68dc30efe96acd8ae1ca170e85d7c2}{%
+           family={Providers\bibnamedelimb of\bibnamedelimb AIDS\bibnamedelima Care},
+           familyi={P\bibinitperiod\bibinitdelim o\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={International\bibnamedelima Association},
+           giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \strng{fullhash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \strng{bibnamehash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \strng{authorbibnamehash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \strng{authornamehash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \strng{authorfullhash}{9b68dc30efe96acd8ae1ca170e85d7c2}
+      \field{extraname}{2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Last accessed 30 July 2023}
+      \field{title}{HIV Life Cycle}
+      \verb{urlraw}
+      \verb https://www.iapac.org/fact-sheet/hiv-life-cycle/
+      \endverb
+      \verb{url}
+      \verb https://www.iapac.org/fact-sheet/hiv-life-cycle/
+      \endverb
+    \endentry
+    \entry{rong2007modeling}{article}{}
+      \name{author}{4}{}{%
+        {{hash=54755ed85ef6496935676a5b29bc78d0}{%
+           family={Rong},
+           familyi={R\bibinitperiod},
+           given={Libin},
+           giveni={L\bibinitperiod}}}%
+        {{hash=4e29e9d7b89018a6860b04dde1de6dd2}{%
+           family={Gilchrist},
+           familyi={G\bibinitperiod},
+           given={Michael\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=caff8214e30e1d9a95e1e19ef7ca42f6}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Zhilan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=765627db3be030b6a298391ae8f35ed8}{%
+           family={Perelson},
+           familyi={P\bibinitperiod},
+           given={Alan\bibnamedelima S},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{e7b9b39a63a7946fc7aafd89c9a2c414}
+      \strng{fullhash}{4999b04a5ea1ee2125228f7f5fbb0ba5}
+      \strng{bibnamehash}{e7b9b39a63a7946fc7aafd89c9a2c414}
+      \strng{authorbibnamehash}{e7b9b39a63a7946fc7aafd89c9a2c414}
+      \strng{authornamehash}{e7b9b39a63a7946fc7aafd89c9a2c414}
+      \strng{authorfullhash}{4999b04a5ea1ee2125228f7f5fbb0ba5}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Theoretical biology}
+      \field{number}{4}
+      \field{title}{Modeling within-host HIV-1 dynamics and the evolution of drug resistance: trade-offs between viral enzyme function and drug susceptibility}
+      \field{volume}{247}
+      \field{year}{2007}
+      \field{pages}{804\bibrangedash 818}
+      \range{pages}{15}
+    \endentry
+    \entry{OriginsofPandemic}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c620187734747ead6a99d55f289f5d08}{%
+           family={Sharp},
+           familyi={S\bibinitperiod},
+           given={Paul\bibnamedelima M},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=45fc0df3bac34b5673c4c83ccf33a623}{%
+           family={Hahn},
+           familyi={H\bibinitperiod},
+           given={Beatrice\bibnamedelima H},
+           giveni={B\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cold Spring Harbor Laboratory Press}%
+      }
+      \strng{namehash}{a1f2f66f2193b9a1cef864e5b3bd00d3}
+      \strng{fullhash}{a1f2f66f2193b9a1cef864e5b3bd00d3}
+      \strng{bibnamehash}{a1f2f66f2193b9a1cef864e5b3bd00d3}
+      \strng{authorbibnamehash}{a1f2f66f2193b9a1cef864e5b3bd00d3}
+      \strng{authornamehash}{a1f2f66f2193b9a1cef864e5b3bd00d3}
+      \strng{authorfullhash}{a1f2f66f2193b9a1cef864e5b3bd00d3}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cold Spring Harbor Perspectives in Medicine:}
+      \field{number}{1}
+      \field{title}{Origins of HIV and the AIDS pandemic}
+      \field{volume}{1}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3234451/
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3234451/
+      \endverb
+    \endentry
+    \entry{UNaids}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c3341ed850516fc6e96774807ffb03c9}{%
+           family={UNAIDS},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{c3341ed850516fc6e96774807ffb03c9}
+      \strng{fullhash}{c3341ed850516fc6e96774807ffb03c9}
+      \strng{bibnamehash}{c3341ed850516fc6e96774807ffb03c9}
+      \strng{authorbibnamehash}{c3341ed850516fc6e96774807ffb03c9}
+      \strng{authornamehash}{c3341ed850516fc6e96774807ffb03c9}
+      \strng{authorfullhash}{c3341ed850516fc6e96774807ffb03c9}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Last accessed 30 July 2023}
+      \field{title}{Global HIV and AIDS Statistics}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.unaids.org/sites/default/files/media_asset/UNAIDS_FactSheet_en.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.unaids.org/sites/default/files/media_asset/UNAIDS_FactSheet_en.pdf
+      \endverb
+    \endentry
+    \entry{cARVtimeline}{article}{}
+      \name{author}{3}{}{%
+        {{hash=41156382dbf52174c652f21465d07be1}{%
+           family={Wandeler},
+           familyi={W\bibinitperiod},
+           given={Gilles},
+           giveni={G\bibinitperiod}}}%
+        {{hash=6b2b2b93dc0b8e2bb0ca454dac873e0a}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Leigh\bibnamedelima F},
+           giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=2f29454e6553ef6eab031956cb1f7469}{%
+           family={Egger},
+           familyi={E\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {NIH Public Access}%
+      }
+      \strng{namehash}{7bb24b9a903a859352ef038e8279ab1b}
+      \strng{fullhash}{7bb24b9a903a859352ef038e8279ab1b}
+      \strng{bibnamehash}{7bb24b9a903a859352ef038e8279ab1b}
+      \strng{authorbibnamehash}{7bb24b9a903a859352ef038e8279ab1b}
+      \strng{authornamehash}{7bb24b9a903a859352ef038e8279ab1b}
+      \strng{authorfullhash}{7bb24b9a903a859352ef038e8279ab1b}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Current Opinion in HIV and AIDS}
+      \field{number}{5}
+      \field{title}{Trends in life expectancy of HIV-positive adults on ART across the globe: comparisons with general population}
+      \field{volume}{11}
+      \field{year}{2016}
+      \field{pages}{492}
+      \range{pages}{1}
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5055447/
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5055447/
+      \endverb
+    \endentry
+    \entry{WHO}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=531217507bec092b6ec36c0f78f46736}{%
+           family={{World Health Organization}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{531217507bec092b6ec36c0f78f46736}
+      \strng{fullhash}{531217507bec092b6ec36c0f78f46736}
+      \strng{bibnamehash}{531217507bec092b6ec36c0f78f46736}
+      \strng{authorbibnamehash}{531217507bec092b6ec36c0f78f46736}
+      \strng{authornamehash}{531217507bec092b6ec36c0f78f46736}
+      \strng{authorfullhash}{531217507bec092b6ec36c0f78f46736}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Last accessed 27 July 2023}
+      \field{title}{HIV and AIDS}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.who.int/news-room/fact-sheets/detail/hiv-aids
+      \endverb
+      \verb{url}
+      \verb https://www.who.int/news-room/fact-sheets/detail/hiv-aids
+      \endverb
+    \endentry
+    \entry{RacialDiscrimination}{article}{}
+      \name{author}{4}{}{%
+        {{hash=a61ce5b2493906871466fd2ae5efb495}{%
+           family={Yashadhana},
+           familyi={Y\bibinitperiod},
+           given={Aryati},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bf4d6e7587ea811acf1516109393db0c}{%
+           family={Derbas},
+           familyi={D\bibinitperiod},
+           given={Alexia},
+           giveni={A\bibinitperiod}}}%
+        {{hash=729ee5f668d59c4e2b602aea1e6e059e}{%
+           family={Biles},
+           familyi={B\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+        {{hash=36a2ec6e74b363cb01b6a660817cb9d0}{%
+           family={Grant},
+           familyi={G\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{6f144e22b016543fd37f5aded765fd08}
+      \strng{fullhash}{aa080beee95786ef6fd790ec8c3dd976}
+      \strng{bibnamehash}{6f144e22b016543fd37f5aded765fd08}
+      \strng{authorbibnamehash}{6f144e22b016543fd37f5aded765fd08}
+      \strng{authornamehash}{6f144e22b016543fd37f5aded765fd08}
+      \strng{authorfullhash}{aa080beee95786ef6fd790ec8c3dd976}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Health promotion international}
+      \field{number}{2}
+      \field{title}{Pandemic-related racial discrimination and its health impact among non-Indigenous racially minoritized peoples in high-income contexts: a systematic review}
+      \field{volume}{37}
+      \field{year}{2022}
+      \field{pages}{daab144}
+      \range{pages}{-1}
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8500046/
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8500046/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
