@@ -137,6 +137,8 @@ gathered_result_wider <- gathered_result %>%
         )
 
 
+
+#not plotted
 plot_result <- ggplot(data = gathered_result_wider,#subset(gathered_result, variable == "TR"), #plot declared equation(s) only
                       mapping=aes(x=time, ymin = max, ymax = min, color = variable, fill = variable)) +
                       #geom_line(linewidth = 1)+
