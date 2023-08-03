@@ -1,4 +1,4 @@
-# HIV_ICR
+# HIV ICR 2023
 
 This study aims to model the within host dynamics of HIV with a focus on CD4+ T-cells and viral load. Inside this repository you will find the following scripts: In_Vivo.R and RTI.R.
 
@@ -36,3 +36,22 @@ open result_ocm_rti.png
 (or .pdf) into the terminal.
 
 
+# The Paper
+
+To open the research paper as a pdf type
+```
+pdflatex HIV.tex
+```
+followed by
+```
+biber HIV
+```
+Now, recompile the file again
+```
+pdflatex HIV.tex
+```
+
+Open the created pdf by typing
+```
+open HIV.pdf
+```
