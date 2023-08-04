@@ -1,5 +1,5 @@
 #This file models the basics of HIV within-host dynamics.
-#You can run this file by typing source("In_Vivo.R") into an interactive R interpretor or you can run R -f In_Vivo.R into the terminal.
+#You can run this file by typing source("In_Vivo.R") into an interactive R interpreter or you can run R -f In_Vivo.R into the terminal.
 
 #This program solves a system of 5 differential equations 
 #described at https://pdfs.semanticscholar.org/022f/3909c2f6a319345ef2d62f3526cdd5dac0ca.pdf.
@@ -130,11 +130,10 @@ plot_result <- ggplot(data = gathered_result,
                       geom_line(linewidth = 1) + #linewidth
                       theme_classic() + #ggplot has several different themes
                       #that can be added to a plot here we are using "classic"
-    
                       theme(legend.position = "none") +
                       ylab("Concentration (mm3)")+ #Y-axis title
                       xlab("Time(days)")+ #X-axis title
-                      facet_wrap(~variable, scales = "free_y")#, ncol = 1) + #plot each equation on its own graph
+                      facet_wrap(~variable, scales = "free_y") + #plot each equation on its own graph
                       coord_cartesian(
                           xlim = NULL,
                           ylim = c(0, NA)) #begin each plot at y = 0
