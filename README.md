@@ -55,3 +55,9 @@ Open the created pdf by typing
 ```
 open HIV.pdf
 ```
+
+# Slides
+To convert the slideshow to a pdf type
+```
+libreoffice --headless --convert-to pdf LilyCrowSlides.pdf.odp
+```
