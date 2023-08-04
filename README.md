@@ -6,6 +6,7 @@ In_Vivo.R is based upon the equations outlined in "An Optimal Control Approach t
 
 RTI.R builds upon In_Vivo.R by accounting for a reverse transcriptase inhibitor (RTI), a type of antiretroviral therapy used to treat HIV. RTI's interfere with the viruses ability to productively infect a cell, thereby preventing the creation of new viruses. The effectiveness of the drug was calculated based on an industry form of measurement called the EC50 value and the minimum and maximum concentration as a function of time. The RTI used in this model is Emtricitabine. The EC50 values of Emtricitabine can be found here: https://www.accessdata.fda.gov/drugsatfda_docs/label/2008/021500s010,021896s004lbl.pdf along with the Cmin and Cmax values here: https://accp1.onlinelibrary.wiley.com/doi/abs/10.1177/0091270007300951 , the Hill Coefficient used in this model is 1, calculated by this paper: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3236558/.
 
+##Plots
 To run In_Vivo.R type
 ```
 R -f In_Vivo.R
@@ -36,7 +37,7 @@ open result_ocm_rti.png
 (or .pdf) into the terminal.
 
 
-# The Paper
+## Paper
 
 To open the research paper as a pdf type
 ```
@@ -56,7 +57,7 @@ Open the created pdf by typing
 open HIV.pdf
 ```
 
-# Slides
+## Slides
 To convert the slideshow to a pdf type
 ```
 libreoffice --headless --convert-to pdf LilyCrowSlides.pdf.odp
