@@ -1,7 +1,7 @@
 library(shiny)
 
 source("HIV.R")
-source("RTI.R")
+#source("RTI.R")
 
 ###Add dashed red line on CD4+ to mark AIDS threshold
 ###summary includes selected options, if 1 year selected "demonstrates withing host dynamics 365 post infection"
@@ -37,26 +37,60 @@ ui <- fluidPage(
                             br(),
                             br(),
                             "The human immune system is tasked with recognizing foreign antigens,
-                             destroying recognized antigens, and creating an immunological memory. Lymphocytes are a type of white blood cell that are responsible for riding the body of invading antigens and infected cells. The lymphocyte population is primarily made up of bone marrow derived lymphocytes (B-cells), thymus derived lymphocytes (T-cells), and natural killer cells (NK-cells). B-cells produce antibodies that kill external attackers such as bacteria, viruses, and toxins. T-cells are responsible for destroying the bodies own cells which have infected by a foreign antigen, typically those that have been taken over by a virus or have become cancerous. HIV results in a chronic, progressive disease that has no cure. HIV is hallmarked by its high viral reproduction rate and destruction of the immune system. The virus targets CD4+ T-cells and decimates the population over time. A normal CD4+ T-cell count is roughly 1,000 mm−3, but once the disease has reached its last stage, CD4+ T-cell counts are below 200 mm−3[19]. Such a low T-cell count leaves the body susceptible to opportunistic infections and cancers. Often, when a person dies from AIDS, it is not the disease itself that killed them, but rather something else that took advantage of a destroyed immune system. B. Stages of HIV HIV has 3 distinct stages of infection: Acute HIV Infection, Chronic HIV Infection, and AIDS. The state of infection is determined based upon a patient’s CD4+ T-cell count, viral load, and presenting symp-toms. Acute HIV infection begins 2-4 weeks after the initial infection and lasts for another 8 [12], [8]. Acute infection is hallmarked by flu-like symptoms that are often accompanied by rash and swollen lymph nodes. In this time the viral load is very high and the transmission rate is high [12]. During acute infection the patients CD4+ T-cell count will drop dramatically[8]. It is at this time that the patient will benefit the most from beginning antiretroviral treatment. Chronic HIV Infection, also called Asymptomatic HIV or Clinical Latency, lasts for roughly 10 years after the Acute Infection stage, although, for some, Clinical Latency can be as short as 5 years[12]. Clinical Latency patients will have very minimal symptoms as the viral load reaches steady state and their CD4+ T-cell count nears normal levels [12], [8]. Towards the end of the Latency stage, CD4+ T-cell counts will decline as the viral load begins to rise. People taking effective cARV’s (combination antiretrovirals) can arrive at and maintain an undetectable viral load during Clincial Latency, making the risk of transmitting HIV through sex nearly 0 [12]. Eventually, an infected person’s CD4+ T-cell will become so low, < 200 cells/mm3 (a normal count is roughly 1,000 cells/mm3), that they will be classified as having AIDS [8]. Acquired Immunodeficiency Syndrome is the final stage of HIV. The patient’s immune system is severely damaged and can no longer fight off infection. Without treatment, a patient can be expected to live for 3 years after an AIDS diagnosis [12]. C. HIV Viral Lifecycle The life cycle of an HIV viral particle (either a virus or virion) is as follows: [14]
-1) Unbound virus or virion circulates in the blood
-stream;
-2) Virus attaches itself to an uninfected cell;
-3) Virus empties contents (genetic code) into this
-cell;
-4) HIV RNA is used by the reverse transcriptase
-enzyme to build HIV DNA;
-5) HIV DNA is then inserted into the cell’s chro-
-mosome by the HIV integrase enzyme, estab-
-lishing HIV infection of the cell;
-6) The infected cell reproduces, activating HIV
-DNA which makes new raw material for new
-viral particles (virions);
-7) Material packets for the new virus come to-
-gether;
-8) The immature virus breaks free of infected cell
-and enters the blood stream;
-9) New virus matures and is now capable of
-infecting healthy cells."
+                             destroying recognized antigens, and creating an immunological memory.
+                             Lymphocytes are a type of white blood cell that are responsible for
+                             riding the body of invading antigens and infected cells. The
+                             lymphocyte population is primarily made up of bone marrow derived
+                             lymphocytes (B-cells), thymus derived lymphocytes (T-cells), and natural
+                             killer cells (NK-cells). B-cells produce antibodies that kill external
+                             attackers such as bacteria, viruses, and toxins. T-cells are responsible
+                             for destroying the bodies own cells which have infected by a foreign
+                             antigen, typically those that have been taken over by a virus or have
+                             become cancerous. HIV results in a chronic, progressive disease that has
+                             no cure. HIV is hallmarked by its high viral reproduction rate and
+                             destruction of the immune system. The virus targets CD4+ T-cells and
+                             decimates the population over time. A normal CD4+ T-cell count is roughly
+                             1,000 mm−3, but once the disease has reached its last stage, CD4+ T-cell
+                             counts are below 200 mm−3[19]. Such a low T-cell count leaves the body
+                             susceptible to opportunistic infections and cancers. Often, when a person
+                             dies from AIDS, it is not the disease itself that killed them, but rather
+                             something else that took advantage of a destroyed immune system.
+                             B. Stages of HIV HIV has 3 distinct stages of infection: Acute HIV
+                             Infection, Chronic HIV Infection, and AIDS. The state of infection is
+                             determined based upon a patient’s CD4+ T-cell count, viral load, and
+                             presenting symp-toms. Acute HIV infection begins 2-4 weeks after the initial
+                             infection and lasts for another 8 [12], [8]. Acute infection is hallmarked by
+                             flu-like symptoms that are often accompanied by rash and swollen lymph nodes.
+                             In this time the viral load is very high and the transmission rate is high
+                             [12]. During acute infection the patients CD4+ T-cell count will drop
+                             dramatically[8]. It is at this time that the patient will benefit the most
+                             from beginning antiretroviral treatment. Chronic HIV Infection, also called
+                             Asymptomatic HIV or Clinical Latency, lasts for roughly 10 years after the
+                             Acute Infection stage, although, for some, Clinical Latency can be as short as
+                             5 years[12]. Clinical Latency patients will have very minimal symptoms as the
+                             viral load reaches steady state and their CD4+ T-cell count nears normal levels
+                             [12], [8]. Towards the end of the Latency stage, CD4+ T-cell counts will
+                             decline as the viral load begins to rise. People taking effective CARV’s
+                             (combination antiretrovirals) can arrive at and maintain an undetectable viral
+                             load during Clincial Latency, making the risk of transmitting HIV through sex
+                             nearly 0 [12]. Eventually, an infected person’s CD4+ T-cell will become so low,
+                             < 200 cells/mm3 (a normal count is roughly 1,000 cells/mm3), that they will be
+                             classified as having AIDS [8]. Acquired Immunodeficiency Syndrome is the final
+                             stage of HIV. The patient’s immune system is severely damaged and can no longer
+                             fight off infection. Without treatment, a patient can be expected to live for 3
+                             years after an AIDS diagnosis [12]. C. HIV Viral Lifecycle The life cycle of an
+                             HIV viral particle (either a virus or virion) is as follows: [14]
+                             1) Unbound virus or virion circulates in the blood stream;
+                             2) Virus attaches itself to an uninfected cell;
+                             3) Virus empties contents (genetic code) into this cell;
+                             4) HIV RNA is used by the reverse transcriptase enzyme to build HIV DNA;
+                             5) HIV DNA is then inserted into the cell’s chromosome by the HIV integrase
+                                enzyme, establishing HIV infection of the cell;
+                             6) The infected cell reproduces, activating HIV DNA which makes new raw material
+                                for new viral particles (virions);
+                             7) Material packets for the new virus come together;
+                             8) The immature virus breaks free of infected cell and enters the blood stream;
+                             9) New virus matures and is now capable of infecting healthy cells."
                             )),
 
                tabPanel("Treatment Options",

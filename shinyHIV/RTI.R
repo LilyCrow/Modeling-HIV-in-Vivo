@@ -162,9 +162,9 @@ gathered_result_wider <- gathered_result %>%
 
 
 
-shinyRTI <- function(choicesVar, choicesDT){
+shinyRTI <- function(choicesVar){###, choicesDT){
 
-if(choicesDT == "Reverse Transcriptase Inhibitor (RTI)"){
+#if(choicesDT == "Reverse Transcriptase Inhibitor (RTI)"){
 #Now plot the data and save it in a new variable: plot_result.
 plot_result <- ggplot(data = subset(gathered_result, variable %in% choicesVar),
                       mapping=aes(x=time, y = value, color = type)) +
@@ -179,6 +179,6 @@ plot_result <- ggplot(data = subset(gathered_result, variable %in% choicesVar),
                       coord_cartesian(
                       xlim = NULL,
                       ylim = c(0, NA)) #Y-axis begins at 0
-    return(plot_result)}
+    return(plot_result)#}
 }
 
