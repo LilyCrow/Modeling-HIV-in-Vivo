@@ -107,12 +107,12 @@ gathered_result$variable[gathered_result$variable == "ZA"] <- "Activated CD8+ T-
 gathered_result$variable <- factor(gathered_result$variable, levels = c("CD4+ T-Cells", "Infected CD4+ T-Cells",
                                                                         "Viral Load","CD8+ T-Cells", "Activated CD8+ T-Cells"))
 
+#choicesVar rerpresents types of cells to be plotted as selected by the user
+#choicesDT will represent which ART is selected by the user
+#TODO: assign an appropriate method to establish which model to use (i.e. HIV, RTI, TODO: PI, II)
+shinyPlot <- function(choicesVar){#,choicesDT){
 
-
-
-shinyPlot <- function(choicesVar){#), choicesDT){
-
-   ### if(is.null(choicesDT)){
+    #if(is.null(choicesDT)){
 #Now plot the data and save it in a new variable: plot_result.
     plot_result <- ggplot(data = subset(gathered_result, variable %in% choicesVar),
                       mapping=aes(x=time, y=value, color = variable)) +

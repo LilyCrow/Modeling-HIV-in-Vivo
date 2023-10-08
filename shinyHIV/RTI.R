@@ -161,12 +161,14 @@ gathered_result_wider <- gathered_result %>%
         )
 
 
-
+#choicesVar rerpresents types of cells to be plotted as selected by the user
+#choicesDT will represent which ART is selected by the user
+#TODO: assign an appropriate method to establish which model to use (i.e. HIV, RTI, TODO: PI, II)
 shinyRTI <- function(choicesVar){###, choicesDT){
 
 #if(choicesDT == "Reverse Transcriptase Inhibitor (RTI)"){
-#Now plot the data and save it in a new variable: plot_result.
-plot_result <- ggplot(data = subset(gathered_result, variable %in% choicesVar),
+#plot the data and save it in a new variable: plot_result.
+plot_result <- ggplot(data = gathered_result_min,
                       mapping=aes(x=time, y = value, color = type)) +
                       geom_line(linewidth = 1) + #Linewidth
                       theme_classic() + #ggplot has several different themes
