@@ -64,9 +64,9 @@ parms_min <- c(mu_x = 0.02,    #Natural death rate of uninfected CD4+ T-cells
            k_v = 360,          #Average number of virions released per infected cell
            beta_z = 0.000005,  #CD8+ T-cell activation rate
            beta_v = 0.000024,  #Rate at which CD4+ T-cells become infected
-           p_I = 0.02,         #Rate at which infected CD4+ T-cells are destroyed
+           p_y = 0.02,         #Rate at which infected CD4+ T-cells are destroyed
            p_v = 0.02,         #Rate at which viruses and virions are destroyed
-           lambda_T = 20,      #Rate at which CD4+ T-cells are created by the body
+           lambda_x = 20,      #Rate at which CD4+ T-cells are created by the body
            lambda_z = 20       #Rate at which CD8+ T-cells are created by the body
            )
 	   
@@ -82,9 +82,9 @@ parms_max <- c(mu_x = 0.02,    #Natural death rate of uninfected CD4+ T-cells
            k_v = 360,          #Average number of virions released per infected cell
            beta_z = 0.000005,  #CD8+ T-cell activation rate
            beta_v = 0.000024,  #Rate at which CD4+ T-cells become infected
-           p_I = 0.02,         #Rate at which infected CD4+ T-cells are destroyed
+           p_y = 0.02,         #Rate at which infected CD4+ T-cells are destroyed
            p_v = 0.02,         #Rate at which viruses and virions are destroyed
-           lambda_T = 20,      #Rate at which CD4+ T-cells are created by the body
+           lambda_x = 20,      #Rate at which CD4+ T-cells are created by the body
            lambda_z = 20       #Rate at which CD8+ T-cells are created by the body
            )
 
@@ -143,14 +143,14 @@ gathered_result <- rbind(gathered_result_min, gathered_result_max)
 
 #This provides each variable, and therefore each graph, with a descriptive title.
 gathered_result$variable[gathered_result$variable == "T"] <- "CD4+ T-Cells"
-gathered_result$variable[gathered_result$variable == "I"] <- "HIV Infected T-Cells"
+gathered_result$variable[gathered_result$variable == "I"] <- "Infected CD4+ T-Cells"
 gathered_result$variable[gathered_result$variable == "V"] <- "Viral Load"
 gathered_result$variable[gathered_result$variable == "Z"] <- "CD8+ T-Cells"
 gathered_result$variable[gathered_result$variable == "ZA"] <- "Activated CD8+ T-Cells"
 #The default order of ggplot2 is alphabetic, the factor() function enables 
 #you to change the order of the plots into something more logical
 #or relevant to your purposes.
-gathered_result$variable <- factor(gathered_result$variable, levels = c("CD4+ T-Cells", "HIV Infected T-Cells", "Viral Load",
+gathered_result$variable <- factor(gathered_result$variable, levels = c("CD4+ T-Cells", "Infected CD4+ T-Cells", "Viral Load",
                                                                         "CD8+ T-Cells", "Activated CD8+ T-Cells"))
 
 gathered_result_wider <- gathered_result %>%

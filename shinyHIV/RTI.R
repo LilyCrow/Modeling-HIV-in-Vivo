@@ -64,9 +64,9 @@ parms_min <- c(mu_x = 0.02,    #Natural death rate of uninfected CD4+ T-cells
            k_v = 360,          #Average number of virions released per infected cell
            beta_z = 0.000005,  #CD8+ T-cell activation rate
            beta_v = 0.000024,  #Rate at which CD4+ T-cells become infected
-           p_I = 0.02,         #Rate at which infected CD4+ T-cells are destroyed
+           p_y = 0.02,         #Rate at which infected CD4+ T-cells are destroyed
            p_v = 0.02,         #Rate at which viruses and virions are destroyed
-           lambda_T = 20,      #Rate at which CD4+ T-cells are created by the body
+           lambda_x = 20,      #Rate at which CD4+ T-cells are created by the body
            lambda_z = 20       #Rate at which CD8+ T-cells are created by the body
            )
 	   
@@ -82,9 +82,9 @@ parms_max <- c(mu_x = 0.02,    #Natural death rate of uninfected CD4+ T-cells
            k_v = 360,          #Average number of virions released per infected cell
            beta_z = 0.000005,  #CD8+ T-cell activation rate
            beta_v = 0.000024,  #Rate at which CD4+ T-cells become infected
-           p_I = 0.02,         #Rate at which infected CD4+ T-cells are destroyed
+           p_y = 0.02,         #Rate at which infected CD4+ T-cells are destroyed
            p_v = 0.02,         #Rate at which viruses and virions are destroyed
-           lambda_T = 20,      #Rate at which CD4+ T-cells are created by the body
+           lambda_x = 20,      #Rate at which CD4+ T-cells are created by the body
            lambda_z = 20       #Rate at which CD8+ T-cells are created by the body
            )
 
@@ -168,7 +168,7 @@ shinyRTI <- function(choicesVar){###, choicesDT){
 
 #if(choicesDT == "Reverse Transcriptase Inhibitor (RTI)"){
 #plot the data and save it in a new variable: plot_result.
-plot_result <- ggplot(data = gathered_result_min,
+plot_result <- ggplot(data = subset(gathered_result, variable %in% choicesVar),
                       mapping=aes(x=time, y = value, color = type)) +
                       geom_line(linewidth = 1) + #Linewidth
                       theme_classic() + #ggplot has several different themes

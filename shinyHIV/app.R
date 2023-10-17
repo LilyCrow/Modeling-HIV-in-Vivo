@@ -128,8 +128,8 @@ ui <- fluidPage(
                                                                   "Activated CD8+ T-Cells"))
                                    ),
                             column(6,
-                                   plotOutput("shinyPlot"),
-                                   plotOutput("shinyRTI")
+                                   plotOutput("shinyGraphs")
+                                   #plotOutput("shinyRTI")
                                    ),
                             column(3,
                                    wellPanel(
@@ -159,17 +159,52 @@ ui <- fluidPage(
                ))
 
 server <- function(input, output, session) {
-    out_plot <- reactive({
-        
-        shinyPlot(choicesVar = input$isolatedPlots)#, choicesDT = input$drugTherapy)
-       
+   # out_plot <- reactive({
+                
+    #    shinyPlot(choicesVar = input$isolatedPlots)}#, choicesDT = input$drugTherapy)
+#       shinyRTI(choicesVar = input$isolatedPlots)
+                                        # })
+        # output$shinyRTI <- renderPlot({
+     #       out_plot()
+                                        # })
+   # out_plot_rti <- reactive({
+   #     shinyRTI(choicesVar = input$isolatedPlots)
+   # })
+
+    out_plot_hiv <- reactive ({
+        shinyPlot(choicesVar = input$isolatedPlots)
     })
-   
-     output$shinyPlot <- renderPlot({
-            out_plot()
-     })
+
+    output$shinyGraphs <- renderPlot({
+   #     if(input$drugTherapy == "Reverse Transcriptase Inhibitor (RTI)")
+   #     {
+   #         out_plot_rti()
+    #    }else{
+            out_plot_hiv()
+     #   }
+    })
     
-     
+        
+    
+#    out_plot <- reactive({
+        
+        #shinyPlot(choicesVar = input$isolatedPlots)
+                  
+#         if(input$drugTherapy == "Reverse Transcriptase Inhibitor (RTI)")
+#         {
+#            print("me too")
+#            shinyRTI(choicesVar = input$isolatedPlots)
+#         }else{
+#             print("im also running")
+             #shinyRTI(choicesVar = NA)
+#            shinyPlot(choicesVar = input$isolatedPlots)
+#         }
+#     })
+    
+#    output$shinyGraphs <- renderPlot({
+#        out_plot()
+#        })
+    
 }
 
 shinyApp(ui = ui, server = server)
