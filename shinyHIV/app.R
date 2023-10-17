@@ -1,7 +1,7 @@
 library(shiny)
 
 source("HIV.R")
-#source("RTI.R")
+source("RTI.R")
 
 ###Add dashed red line on CD4+ to mark AIDS threshold
 ###summary includes selected options, if 1 year selected "demonstrates withing host dynamics 365 post infection"
@@ -167,21 +167,23 @@ server <- function(input, output, session) {
         # output$shinyRTI <- renderPlot({
      #       out_plot()
                                         # })
-   # out_plot_rti <- reactive({
-   #     shinyRTI(choicesVar = input$isolatedPlots)
-   # })
+    out_plot_rti <- reactive({
+       shinyRTI(choicesVar = input$isolatedPlots)
+    })
 
     out_plot_hiv <- reactive ({
         shinyPlot(choicesVar = input$isolatedPlots)
     })
 
     output$shinyGraphs <- renderPlot({
-   #     if(input$drugTherapy == "Reverse Transcriptase Inhibitor (RTI)")
-   #     {
-   #         out_plot_rti()
-    #    }else{
+        #out_plot_hiv()
+        
+        if(input$drugTherapy == "Reverse Transcriptase Inhibitor (RTI)")
+        {
+            out_plot_rti()
+        }else{
             out_plot_hiv()
-     #   }
+        }
     })
     
         

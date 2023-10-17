@@ -8,13 +8,13 @@ library(tidyr)
 
 # rti_func is the function on the right hand side of the
 # differential equation. 
-rti_func <- function(t, HIV, params) {
+rti_func <- function(t, RTI, params) {
 
-    T = HIV["T"]
-    I = HIV["I"]
-    V = HIV["V"]
-    Z = HIV["Z"]
-    ZA = HIV["ZA"]
+    T = RTI["T"]
+    I = RTI["I"]
+    V = RTI["V"]
+    Z = RTI["Z"]
+    ZA = RTI["ZA"]
 
     mu_x = params["mu_x"]
     mu_y = params["mu_y"]
@@ -139,21 +139,21 @@ gathered_result_max <- gather(diffeq_result_max, variable, value, -time)
 gathered_result_max$type <- "max"
 
 #Puts minimum and maximum efficacy values into one variable to be plotted
-gathered_result <- rbind(gathered_result_min, gathered_result_max)
+gathered_result_rti <- rbind(gathered_result_min, gathered_result_max)
 
 #This provides each variable, and therefore each graph, with a descriptive title.
-gathered_result$variable[gathered_result$variable == "T"] <- "CD4+ T-Cells"
-gathered_result$variable[gathered_result$variable == "I"] <- "Infected CD4+ T-Cells"
-gathered_result$variable[gathered_result$variable == "V"] <- "Viral Load"
-gathered_result$variable[gathered_result$variable == "Z"] <- "CD8+ T-Cells"
-gathered_result$variable[gathered_result$variable == "ZA"] <- "Activated CD8+ T-Cells"
+gathered_result_rti$variable[gathered_result_rti$variable == "T"] <- "CD4+ T-Cells"
+gathered_result_rti$variable[gathered_result_rti$variable == "I"] <- "Infected CD4+ T-Cells"
+gathered_result_rti$variable[gathered_result_rti$variable == "V"] <- "Viral Load"
+gathered_result_rti$variable[gathered_result_rti$variable == "Z"] <- "CD8+ T-Cells"
+gathered_result_rti$variable[gathered_result_rti$variable == "ZA"] <- "Activated CD8+ T-Cells"
 #The default order of ggplot2 is alphabetic, the factor() function enables 
 #you to change the order of the plots into something more logical
 #or relevant to your purposes.
-gathered_result$variable <- factor(gathered_result$variable, levels = c("CD4+ T-Cells", "Infected CD4+ T-Cells", "Viral Load",
+gathered_result_rti$variable <- factor(gathered_result_rti$variable, levels = c("CD4+ T-Cells", "Infected CD4+ T-Cells", "Viral Load",
                                                                         "CD8+ T-Cells", "Activated CD8+ T-Cells"))
 
-gathered_result_wider <- gathered_result %>%
+gathered_result_wider <- gathered_result_rti %>%
     pivot_wider(
         id_cols = c("time", "variable"),
         names_from = type,
@@ -168,7 +168,7 @@ shinyRTI <- function(choicesVar){###, choicesDT){
 
 #if(choicesDT == "Reverse Transcriptase Inhibitor (RTI)"){
 #plot the data and save it in a new variable: plot_result.
-plot_result <- ggplot(data = subset(gathered_result, variable %in% choicesVar),
+plot_result <- ggplot(data = subset(gathered_result_rti, variable %in% choicesVar),
                       mapping=aes(x=time, y = value, color = type)) +
                       geom_line(linewidth = 1) + #Linewidth
                       theme_classic() + #ggplot has several different themes
