@@ -105,11 +105,15 @@ ui <- fluidPage(
                                    h3("Model Modifications"),
 
                                    helpText("words to brief explain"),
-                                   checkboxGroupInput("drugTherapy",
+                                   #checkboxGroupInput("drugTherapy",
+                                   radioButtons("drugTherapy",
                                                       h4("Anti-retroviral Therapy"),
-                                                      choices = c("Reverse Transcriptase Inhibitor (RTI)",
-                                                                  "Protease Inhibitor (PI)",
-                                                                  "Integrase Inhibitor")),
+                                                      choices = c("No drug therapy" = 1,
+                                                                  "Reverse Transcriptase Inhibitor (RTI)" = 2,
+                                                                  "Protease Inhibitor (PI)" = 3,
+                                                                  "Integrase Inhibitor" = 4),
+                                                                  selected = 1),
+                                   
 
                                    helpText("words to brief explain"),
                                    #need different time for ART?
@@ -119,13 +123,16 @@ ui <- fluidPage(
 
                                    #advanced: downward arrow: select plots
                                    #default is all 5, can select individual
+                                   #inquire about how to do 1,23,4,5 and pass info onto HIV.R as "CD4+" etc.
+                                   #(not have to write out each plot name in selected
                                    checkboxGroupInput("isolatedPlots",
                                                       h4("Select Plot"),
-                                                      choices = c("CD4+ T-Cells",
-                                                                  "Infected CD4+ T-Cells",
-                                                                  "Viral Load",
-                                                                  "CD8+ T-Cells",
-                                                                  "Activated CD8+ T-Cells"))
+                                                      choices = c("CD4+ T-Cells" = 1,
+                                                                  "Infected CD4+ T-Cells" = 2,
+                                                                  "Viral Load" = 3,
+                                                                  "CD8+ T-Cells" = 4,
+                                                                  "Activated CD8+ T-Cells" = 5),
+                                                                  selected = c(1,2,3,4,5))
                                    ),
                             column(6,
                                    plotOutput("shinyGraphs")
@@ -178,7 +185,7 @@ server <- function(input, output, session) {
     output$shinyGraphs <- renderPlot({
         #out_plot_hiv()
         
-        if(input$drugTherapy == "Reverse Transcriptase Inhibitor (RTI)")
+        if(input$drugTherapy == 2)
         {
             out_plot_rti()
         }else{
