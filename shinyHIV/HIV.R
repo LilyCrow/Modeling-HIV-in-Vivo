@@ -116,7 +116,7 @@ shinyPlot <- function(choicesVar){#,choicesDT){
 #Now plot the data and save it in a new variable: plot_result.
     plot_result <- ggplot(data = subset(gathered_result, variable %in% choicesVar),
                       mapping=aes(x=time, y=value, color = variable)) +
-                      geom_line(linewidth = 1) + #linewidth
+                      geom_line(linewidth = 1.5) + #linewidth
                       theme_classic() + #ggplot has several different themes
                       #that can be added to a plot, here we are using "classic"
                       theme(legend.position = "none") +

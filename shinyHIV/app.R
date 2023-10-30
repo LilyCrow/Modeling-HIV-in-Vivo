@@ -13,90 +13,144 @@ ui <- fluidPage(
   
     navbarPage("Modeling the Within-Host Dynamics of HIV",
 
-               tabPanel("How HIV Works: Between & Within Host",
-                        titlePanel("How HIV Works: Between & Within Host(s)"),
+               tabPanel("How HIV Works",
+                        titlePanel("How HIV Works: Between & Within Host(s) Dynamics"),
                         
                         mainPanel(
                             "Acquired Immunodeficiency Syndrome, also known as AIDS, was recognized
-                             as a new disease in 1981 after an increasing number of homosexual men
-                             died from unusual, and in many cases, rare, infections and malignancies-
-                             notably pneumocystis carinii pneumonia and Kaposi Sarcoma [20], [7], [4].
-                             Patient’s health declined in a rapid downward spiral as doctors struggled
-                             to treat one infection after another. It didn’t take long for Human
-                             Immunodeficiency Virus Type 1 to be identified as the cause of AIDS [20].
+                             as a new disease in 1981 after a series of young, previously healthy
+                             men died from unusual, and in many cases, rare, infections
+                             and malignancies [20], [7], [4].
+                             On April 23, 1984 
+                             Human Immunodeficiency Virus Type 1 was identified as the virus that causes AIDS [20] https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aids-timeline/#year-1984.
                              At least 85.6 million people have been infected by HIV over the last 4
                              decades and 40.4 million have died [23].",
                             br(),
                             br(),
-                            "As a sexually transmitted disease",
-                            "HIV is spread, primarily, as a sexually transmitted disease. HIV can
-                             also be contracted through exposure to an infected persons bodily fluids
-                             via, for example, an open wound, perinatally (during pregnancy), from the
-                             use, or accidental use of, an infected persons needle(s), among other
-                             paths [20].",
+                            #"As a sexually transmitted disease",
+                            "HIV is spread, primarily, through sex. Additionally, HIV can
+                             be contracted through exposure to an infected persons bodily fluids. 
+                             Transmission most commonly occurs through contact with an open wound,
+                             perinatally (during pregnancy), from the
+                             use, or accidental use of, an infected persons needle(s) [20].",
                             br(),
                             br(),
-                            "The human immune system is tasked with recognizing foreign antigens,
-                             destroying recognized antigens, and creating an immunological memory.
-                             Lymphocytes are a type of white blood cell that are responsible for
-                             riding the body of invading antigens and infected cells. The
-                             lymphocyte population is primarily made up of bone marrow derived
-                             lymphocytes (B-cells), thymus derived lymphocytes (T-cells), and natural
-                             killer cells (NK-cells). B-cells produce antibodies that kill external
-                             attackers such as bacteria, viruses, and toxins. T-cells are responsible
-                             for destroying the bodies own cells which have infected by a foreign
-                             antigen, typically those that have been taken over by a virus or have
-                             become cancerous. HIV results in a chronic, progressive disease that has
+                            "HIV results in a chronic, progressive disease that has
                              no cure. HIV is hallmarked by its high viral reproduction rate and
-                             destruction of the immune system. The virus targets CD4+ T-cells and
-                             decimates the population over time. A normal CD4+ T-cell count is roughly
-                             1,000 mm−3, but once the disease has reached its last stage, CD4+ T-cell
-                             counts are below 200 mm−3[19]. Such a low T-cell count leaves the body
-                             susceptible to opportunistic infections and cancers. Often, when a person
-                             dies from AIDS, it is not the disease itself that killed them, but rather
-                             something else that took advantage of a destroyed immune system.
-                             B. Stages of HIV HIV has 3 distinct stages of infection: Acute HIV
-                             Infection, Chronic HIV Infection, and AIDS. The state of infection is
-                             determined based upon a patient’s CD4+ T-cell count, viral load, and
-                             presenting symp-toms. Acute HIV infection begins 2-4 weeks after the initial
-                             infection and lasts for another 8 [12], [8]. Acute infection is hallmarked by
+                             destruction of the immune system. The virus targets CD4+ T-cells, a type
+                             of lymphocyte (lymphocytes are white blood cells responsible for riding
+                             the body of invading antigens and infected cells). CD4+ T-cells are
+                             responsible for detecting attacks on the bodies own cells and sending
+                             signals to other 'killer' lymphocytes triggering an immune response.",
+                            br(),
+                            br(),
+                            "Overtime HIV reduces the CD4+ T-cell population to roughly 20% of normal
+                             levels [19]. Such a low T-cell count leaves the body susceptible to
+                             opportunistic infections and cancers. The near total destruction of the
+                             immune system, perpetrated by HIV, makes treating such infections exceptionally
+                             difficult and survival rates plumit.",
+                            br(),
+                            br(),
+                            h3("Stages of HIV"),
+                            #br(),
+                            "HIV has 3 distinct stages of infection: Acute HIV
+                             Infection, Chronic HIV Infection, and Aquired Immune Deficiency Syndrome. The
+                             state of infection is determined based upon a patient’s CD4+ T-cell count,
+                             viral load, and presenting symptoms.",
+                            br(),
+                            br(),
+                            "Acute HIV Infection: begins 2-4 weeks after the initial
+                             infection, lasting for ~8-10 weeks [12], [8]. Acute infection is hallmarked by
                              flu-like symptoms that are often accompanied by rash and swollen lymph nodes.
-                             In this time the viral load is very high and the transmission rate is high
+                             In this time the viral load is very high, as is the likelihood of transmission
                              [12]. During acute infection the patients CD4+ T-cell count will drop
                              dramatically[8]. It is at this time that the patient will benefit the most
-                             from beginning antiretroviral treatment. Chronic HIV Infection, also called
-                             Asymptomatic HIV or Clinical Latency, lasts for roughly 10 years after the
-                             Acute Infection stage, although, for some, Clinical Latency can be as short as
-                             5 years[12]. Clinical Latency patients will have very minimal symptoms as the
-                             viral load reaches steady state and their CD4+ T-cell count nears normal levels
-                             [12], [8]. Towards the end of the Latency stage, CD4+ T-cell counts will
-                             decline as the viral load begins to rise. People taking effective CARV’s
+                             from beginning antiretroviral treatment.",
+                            br(),
+                            br(),
+                            "Chronic HIV Infection (also called Asymptomatic HIV or Clinical Latency):
+                             lasts for approxiamtely 10 years post
+                             Acute Infection, although, for some, Clinical Latency can be as short as
+                             5 years [12]. Patients taking effective treatment regimens can prolong this
+                             stage for up to 30 years. Clinical Latency patients will have very minimal
+                             symptoms. The viral load reaches 'steady state', meaning the number of viruses
+                             in the body stays relatively stable-- typically at lower numbers--
+                             CD4+ T-cell counts 
+                             near normal levels [12], [8]. Towards the end of Chronic Infection, CD4+ T-cell counts will
+                             decline rapidly as the viral load begins to rise. People taking effective CARV’s
                              (combination antiretrovirals) can arrive at and maintain an undetectable viral
-                             load during Clincial Latency, making the risk of transmitting HIV through sex
-                             nearly 0 [12]. Eventually, an infected person’s CD4+ T-cell will become so low,
+                             load during this stage, making the risk of transmitting HIV through sex
+                             nearly 0 [12].",
+                            br(),
+                            br(),
+                            "Acquired Immunodeficiency Syndrome (AIDS): Eventually, an infected person’s CD4+
+                             T-cell will become so low,
                              < 200 cells/mm3 (a normal count is roughly 1,000 cells/mm3), that they will be
                              classified as having AIDS [8]. Acquired Immunodeficiency Syndrome is the final
                              stage of HIV. The patient’s immune system is severely damaged and can no longer
                              fight off infection. Without treatment, a patient can be expected to live for 3
-                             years after an AIDS diagnosis [12]. C. HIV Viral Lifecycle The life cycle of an
-                             HIV viral particle (either a virus or virion) is as follows: [14]
-                             1) Unbound virus or virion circulates in the blood stream;
-                             2) Virus attaches itself to an uninfected cell;
-                             3) Virus empties contents (genetic code) into this cell;
-                             4) HIV RNA is used by the reverse transcriptase enzyme to build HIV DNA;
-                             5) HIV DNA is then inserted into the cell’s chromosome by the HIV integrase
-                                enzyme, establishing HIV infection of the cell;
-                             6) The infected cell reproduces, activating HIV DNA which makes new raw material
-                                for new viral particles (virions);
-                             7) Material packets for the new virus come together;
-                             8) The immature virus breaks free of infected cell and enters the blood stream;
-                             9) New virus matures and is now capable of infecting healthy cells."
+                             years after an AIDS diagnosis [12].",
+                            br(),
+                            br(),
+                            fluidRow(
+                                column(7,
+                                       h3(" HIV Viral Lifecycle"),
+                                       "The life cycle of an
+                                       HIV viral particle (either a virus or virion) is as follows: [14]",
+                                       br(),
+                                       tags$ol(type = "1",
+                                               tags$li(" Unbound virus or virion circulates in the blood stream;"),
+                                               tags$li(" Virus attaches itself to an uninfected cell;"),
+                                               tags$li(" Virus empties contents (genetic code) into this cell;"),
+                                               tags$li(" HIV RNA is used by the reverse transcriptase enzyme to build HIV DNA;"),
+                                               tags$li(" HIV DNA is then inserted into the cell’s chromosome by the HIV
+                                                        integrase enzyme, establishing HIV infection of the cell;"),
+                                               tags$li(" The infected cell reproduces, activating HIV DNA which makes
+                                                        new raw material for new viral particles (virions);"),
+                                               tags$li(" Material packets for the new virus come together;"),
+                                               tags$li(" The immature virus breaks free of infected cell and enters the blood stream;"),
+                                               tags$li(" New virus matures and is now capable of infecting healthy cells."))),
+                                column(5,
+                                       img(src = "lifeCycle.png", height = 450, width = 600)))
                             )),
-
+  ## explain antiretroviral
+### make drop down panel explaining each different kind
                tabPanel("Treatment Options",
                         mainPanel(
-                            ## explain antiretroviral
-                            ### make drop down panel explaining each different kind
+                            h3("Background"),
+                            "In 1987, the first drug was approved to treat HIV
+                             [7]. AZT (full name azidothymidine), originally used
+                             to treat cancer, is a reverse transcriptase inhibitor 
+                             (RTI). It’s success was short lived as drug resistant
+                             variants of HIV took over. Since then, combination
+                             antiretroviral therapies have become the standard
+                             of HIV care. There are 5 classes of antiretroviral
+                             therapies (ART’s) used to treat HIV, table III outlines
+                             the purpose of each drug class. Combination
+                             antiretrovirals (cARV’s) typically include 3 or more
+                             drugs from more than one class, in an attempt to
+                             overcome HIV’s adaptive and drug resistant nature
+                             [13].",
+                            br(),
+                            br(),
+                            "3 enzymes vital to the productive infection of a
+                             cell with HIV, were quickly identified as the reverse
+                             transcriptase, integrase, and protease enzymes [7].
+                             Reverse transcriptase takes viral RNA and turns it
+                             into DNA, so that viral DNA can be joined with
+                             the cell’s DNA, this is step 4 in section II-C [14].
+                             The integrase enzyme completes the second half of
+                             this process, by, as the name suggests, integrating
+                             the viral DNA into the cell’s (step 5, II-C) [14]. The
+                             protease enzyme has a different job. As the last step
+                             in the process, protease finishes the maturation of an
+                             HIV virion that has burst from the host cell [14]. The
+                             identification of these three enzymes have provided
+                             opportunities for targeted drug therapies.",
+                            br(),
+                            br(),
+                            
+                            
                         )),
                
                tabPanel("Model",
@@ -124,16 +178,19 @@ ui <- fluidPage(
                                    #advanced: downward arrow: select plots
                                    #default is all 5, can select individual
                                    #inquire about how to do 1,23,4,5 and pass info onto HIV.R as "CD4+" etc.
-                                   #(not have to write out each plot name in selected
+                                   #(not have to write out each plot name in selected)
                                    checkboxGroupInput("isolatedPlots",
                                                       h4("Select Plot"),
-                                                      choices = c("CD4+ T-Cells" = 1,
-                                                                  "Infected CD4+ T-Cells" = 2,
-                                                                  "Viral Load" = 3,
-                                                                  "CD8+ T-Cells" = 4,
-                                                                  "Activated CD8+ T-Cells" = 5),
-                                                                  selected = c(1,2,3,4,5))
-                                   ),
+                                                      choices = c("CD4+ T-Cells",
+                                                                  "Infected CD4+ T-Cells",
+                                                                  "Viral Load",
+                                                                  "CD8+ T-Cells",
+                                                                  "Activated CD8+ T-Cells"),
+                                                      selected = c("CD4+ T-Cells",
+                                                                   "Infected CD4+ T-Cells",
+                                                                   "Viral Load",
+                                                                   "CD8+ T-Cells",
+                                                                   "Activated CD8+ T-Cells"))),
                             column(6,
                                    plotOutput("shinyGraphs")
                                    #plotOutput("shinyRTI")
