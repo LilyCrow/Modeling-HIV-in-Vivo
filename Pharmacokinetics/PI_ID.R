@@ -36,22 +36,29 @@ pi_id_func <- function(t, PI_ID, params) {
     tau = params["tau"]       
     delta = params["delta"] 
     N = params["N"]         
-    c = params["c"]           
+    c = params["c"]      
     m = params["m"]          
-    #t = params["t"]
     
 
-    dC_b = ((F*D) / (V_d)) * ((k_a)/(k_e - k_a)) * ((exp(-k_e*t)) / ((exp(k_a * I_d)) - 1)) * (1 - (exp(k_e - (k_a * t)))) * (1 - (exp(N_d * k_a * I_d))) + ((exp(k_e * I_d)) - (exp(k_a * I_d))) * ((exp((N_d - 1) * k_e * I_d) - 1) / ((exp(k_e * I_d)) - 1)) - (exp((((N_d - 1) * k_e) + k_a) * I_d))
-    C_c = (1 - f_b)*H*C_b
-    epsilon_PI = (C_c) / (IC_50_PI + C_c)
-    dT = lambda - d*T - k*T*V_I
-    dI = k*T*( - tau)*V_I*( - tau)*exp(-m*tau) - delta*I
-    dV_I = N*delta*I*(1 - epsilon_PI) - c*V_I
-    dV_NI = N*delta*I*epsilon_PI - c*V_NI
+    if (t < tau){
+        C_b = 0        #Plasma concentration
+        C_c = 0        #Intracellular concentration
+        epsilon_PI = 0 #Instantatneous efficacy
+        dT = lambda - d*T - k*T*V_I      #CD4+ T-cells
+        dI = k*T*lagvalue(t - tau)*V_I*lagvalue(t - tau)*exp(-m*tau) - delta*I          #Infected CD4+ T-cells
+        dV_I = N*delta*I*(1 - epsilon_PI) - c*V_I    #Infectious Virions
+        dV_NI = N*delta*I*epsilon_PI - c*V_NI        #Non-infectious Virions
+    }else if (t >= tau){
 
-
-    list(c(dC_b, C_c, epsilon_PI, dT, dI, dV_I, dV_NI))
-
+            C_b = ((F*D) / (V_d)) * ((k_a)/(k_e - k_a)) * ((exp(-k_e*t)) / ((exp(k_a * I_d)) - 1)) * (1 - (exp(k_e - (k_a * t)))) * (1 - (exp(N_d * k_a * I_d))) + ((exp(k_e * I_d)) - (exp(k_a * I_d))) * ((exp((N_d - 1) * k_e * I_d) - 1) / ((exp(k_e * I_d)) - 1)) - (exp((((N_d - 1) * k_e) + k_a) * I_d))
+            C_c = (1 - f_b)*H*C_b
+            epsilon_PI = (C_c) / (IC_50_PI + C_c)
+            dT = lambda - d*T - k*T*V_I
+            dI = k*T*lagvalue(t - tau)*V_I*lagvalue(t - tau)*exp(-m*tau) - delta*I
+            dV_I = N*delta*I*(1 - epsilon_PI) - c*V_I
+            dV_NI = N*delta*I*epsilon_PI - c*V_NI
+}
+    list(c(C_b, C_c, epsilon_PI, dT, dI, dV_I, dV_NI))
 }
 
 #Parameters
@@ -68,7 +75,7 @@ parms <- c(F = 1,                #Fraction of drug that is absorbed
            lambda = 10000,       #Rate at which CD4+ T-cells are produced by the body
            d = 0.01,             #Natural death rate of uninfected CD4+ T-cells
            k = 0.000000024,      #Infection rate of CD4+ T-cells
-           tau = 0.66,           #Intracellular delay
+           tau = 3,           #Intracellular delay
            delta = 0.74,         #Natural death rate of infected CD4+ T-cells
            N = 1249,             #Viral burst size (# of virions produced per infected CD4+ T-cell)
            c = 23,               #Rate at which virions are cleared by the body
@@ -87,11 +94,11 @@ Pstart <- c(C_b = 0,        #Plasma concentration
 	    )    
 
 #Time steps to solve equation for (full collection of x-axis points)
-times <- seq(from=0, to= 365, by= 1)
+times <- seq(from=0, to= 10, by= 1)
 
 
 #Invoke the ODE function.
-diffeq_result <- ode(
+diffeq_result <- dede(
     func=pi_id_func,
     y=Pstart,
     times=times,

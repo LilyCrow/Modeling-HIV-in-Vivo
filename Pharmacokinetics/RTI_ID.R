@@ -38,7 +38,7 @@ rti_id_func <- function(t, RTI_ID, params) {
     k_ecell = params["k_ecell"]     #Rate constant for cellular elimination
     k_1f = params["k_1f"]           #Rate constant of phosphorylation to monophosphorylated form (C_cp)
     k_1b = params["k_1b"]           #Rate constant of dephosphorylation (C_cp to C_c)
-    k_2f = params["k_2f"]           #Rate constant of phophorylation to diphosphorylated from of drug (C_cp to C_cpp)
+    k_2f = params["k_2f"]           #Rate constant of phosphorylation to diphosphorylated from of drug (C_cp to C_cpp)
     k_2b = params["k_2b"]           #Rate constant of dephosphorylation (C_cpp to C_cp)
     IC_50_RTI = params["IC_50_RTI"] #Plasma concentration that reduces viral production rate by 50%
 
@@ -55,16 +55,33 @@ rti_id_func <- function(t, RTI_ID, params) {
     # now that we have extracted the parameters, we can evaluate the
     # differential equation's right hand side
 
-    dC_b = ((F*D) / (V_d)) * ((k_a)/(k_e - k_a)) * ((exp(-k_e*t)) / ((exp(k_a * I_d)) - 1)) * (1 - (exp(k_e - (k_a * t)))) * (1 - (exp(N_d * k_a * I_d))) + ((exp(k_e * I_d)) - (exp(k_a * I_d))) * ((exp((N_d - 1) * k_e * I_d) - 1) / ((exp(k_e * I_d)) - 1)) - (exp((((N_d - 1) * k_e) + k_a) * I_d))
-    C_x = (1 - f_b)*H*C_b - C_c
-    dC_c = k_acell*C_x - k_ecell*C_c - k_1f*C_c + k_1b*C_cp
-    dC_cp = -k_ecell*C_cp + k_1f*C_c - k_1b*C_cp - k_2f*C_cp + k_2b*C_cpp
-    dC_cpp = -k_ecell*C_cpp + k_2f*C_cp - k_2b*C_cpp
-    epsilon_RTI = (C_cpp) / (IC_50_RTI + C_cpp)
+    if (t < tau){
+        dC_b = ((F*D) / (V_d)) * ((k_a)/(k_e - k_a)) * ((exp(-k_e*t)) / ((exp(k_a * I_d)) - 1)) * (1 - (exp(k_e - (k_a * t)))) * (1 - (exp(N_d * k_a * I_d))) + ((exp(k_e * I_d)) - (exp(k_a * I_d))) * ((exp((N_d - 1) * k_e * I_d) - 1) / ((exp(k_e * I_d)) - 1)) - (exp((((N_d - 1) * k_e) + k_a) * I_d))
+        C_x = (1 - f_b)*H*C_b - C_c
+        dC_c = k_acell*C_x - k_ecell*C_c - k_1f*C_c + k_1b*C_cp
+        dC_cp = -k_ecell*C_cp + k_1f*C_c - k_1b*C_cp - k_2f*C_cp + k_2b*C_cpp
+        dC_cpp = -k_ecell*C_cpp + k_2f*C_cp - k_2b*C_cpp
+        epsilon_RTI = (C_cpp) / (IC_50_RTI + C_cpp)
     
-    dT = lambda - d*T - (1 - epsilon_RTI)*k*T*V
-    dI = (1 - epsilon_RTI * ( - tau))*k*T*( - tau)*V*( - tau)*exp(-m*tau) - delta*I
-    dV = N*delta*I - c*V
+        dT = lambda - d*T - (1 - epsilon_RTI)*k*T*V
+        dI = (1 - epsilon_RTI)*k*T*V*exp(-m*tau)
+        dV = - c*V
+    }else if(t >= tau){
+        lag_epsilon_RTI = lagvalue(t - tau)[6]
+        lag_T = lagvalue(t - tau)[7]
+        lag_V = lagvalue(t - tau)[9]
+        
+        dC_b = ((F*D) / (V_d)) * ((k_a)/(k_e - k_a)) * ((exp(-k_e*t)) / ((exp(k_a * I_d)) - 1)) * (1 - (exp(k_e - (k_a * t)))) * (1 - (exp(N_d * k_a * I_d))) + ((exp(k_e * I_d)) - (exp(k_a * I_d))) * ((exp((N_d - 1) * k_e * I_d) - 1) / ((exp(k_e * I_d)) - 1)) - (exp((((N_d - 1) * k_e) + k_a) * I_d))
+        C_x = (1 - f_b)*H*C_b - C_c
+        dC_c = k_acell*C_x - k_ecell*C_c - k_1f*C_c + k_1b*C_cp
+        dC_cp = -k_ecell*C_cp + k_1f*C_c - k_1b*C_cp - k_2f*C_cp + k_2b*C_cpp
+        dC_cpp = -k_ecell*C_cpp + k_2f*C_cp - k_2b*C_cpp
+        epsilon_RTI = (C_cpp) / (IC_50_RTI + C_cpp)
+    
+        dT = lambda - d*T - (1 - epsilon_RTI)*k*T*V
+        dI = (1 - lag_epsilon_RTI)*k*lag_T*lag_V*exp(-m*tau) - delta*I
+        dV = N*delta*I - c*V
+        }
 
     list(c(dC_b, C_x, dC_c, dC_cp, dC_cpp, epsilon_RTI, dT, dI, dV))
 }
@@ -105,7 +122,7 @@ Pstart <- c(C_b = 0,     #Concentration of the drug in the blood
             C_cp = 0,    #Intracellular concentration of monophosphorylated form of the drug
             C_cpp = 0,   #Intracellular concentration of diphosphorylated form of the drug
             epsilon_RTI = 0, #Instantaneous efficacy of the drug
-            T = 1000,    #CD4+ T-cells
+            T = 1000000,    #CD4+ T-cells
        	    I = 0,       #Infected CD4+ T-cells
             V = 0.001    #Viral particles
 	    )    
@@ -119,7 +136,7 @@ times <- seq(from=0, to=365, by= 1)
 #(rti_func), the initial values (Pstart), time steps that need to be
 #solved for (times), and equation constants (parms_min or parms_max)
 
-diffeq_result <- ode(
+diffeq_result <- dede(
     func=rti_id_func,
     y=Pstart,
     times=times,

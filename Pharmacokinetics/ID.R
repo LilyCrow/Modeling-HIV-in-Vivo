@@ -22,47 +22,53 @@ id_func <- function(t, ID, params) {
     N = params["N"]           #Viral burst size (# of virions produced per infected CD4+ T-cell)
     c = params["c"]           #Rate at which virions are cleared by the body
     m = params["m"]           #Rate at which infected cells die before producing virions
-    #t = params["t"]
 
-    # now that we have extracted the parameters, we can evaluate the
-    # differential equation's right hand side
 
-    dT = lambda - d*T - k*T*V
-    dI = k*T*( - tau)*V*( - tau)*exp(-m*tau) - delta*I
-    dV = N*delta*I - c*V
-
+    if (t < tau){
+        #t < tau cells still get infected but don't yet produce virions (take time for cell cycle)
+        dT = lambda - d*T - k*T*V
+        dI = k*T*V*exp(-m*tau)
+        #dV = ifelse(lagvalue(t - 1)[3] - c*V < 0, 0, -c*V)
+        dV = -c*V
+       
+    }else if (t >= tau){
+        lag_T = lagvalue(t - tau)[1]
+        lag_V = lagvalue(t - tau)[3]
+        
+        dT = lambda - d*T - k*T*V
+        dI = k*lag_T*lag_V*exp(-m*tau) - delta*I
+        dV = N*delta*I - c*V
+    }
 
     list(c(dT, dI, dV))
 }
 
 #Parameters
-parms <- c(lambda = 10000, #Rate at which CD4+ T-cells are produced by the body
+parms <- c(lambda = 10000,  #Rate at which CD4+ T-cells are produced by the body
            d = 0.01,        #Natural death rate of uninfected CD4+ T-cells
            k = 0.000000024, #Infection rate of CD4+ T-cells
            tau = 1.5,       #Intracellular delay
            delta = 1,       #Natural death rate of infected CD4+ T-cells
-           N = 2500,       #Viral burst size (# of virions produced per infected CD4+ T-cell)
+           N = 2500,        #Viral burst size (# of virions produced per infected CD4+ T-cell)
            c = 23,          #Rate at which virions are cleared by the body
            m = 0.01         #Rate at which infected cells die before producing virions
-           #t = times
            )
 
 #Initial values
-Pstart <- c(T = 1000,    #CD4+ T-cells
+Pstart <- c(T = 1000000,    #CD4+ T-cells
        	    I = 0,       #Infected CD4+ T-cells
-            V = 0.001    #Viral particles
+            V = 0.01    #Viral particles
 	    )    
 
 #Time steps to solve equation for (full collection of x-axis points)
 times <- seq(from=0, to=365, by= 1)
 
 
-#Now inoke the ODE function.
+#Invoke the ODE function.
 #It requires four things to run: the right hand side of the function
 #(rti_func), the initial values (Pstart), time steps that need to be
-#solved for (times), and equation constants (parms_min or parms_max)
-
-diffeq_result <- ode(
+#solved for (times), and equation constants
+diffeq_result <- dede(
     func=id_func,
     y=Pstart,
     times=times,
@@ -76,7 +82,6 @@ diffeq_result <- as.data.frame(diffeq_result)
 #The R gather() function, extracts the data needed by ggplot.
 #It also helps to massage the data in a way that preps it to be plotted. 
 gathered_result <- gather(diffeq_result, variable, value, -time)
-
 
 #This provides each variable, and therefore each graph, with a descriptive title.
 gathered_result$variable[gathered_result$variable == "T"] <- "CD4+ T-Cells"
@@ -102,12 +107,10 @@ plot_result <- ggplot(data = gathered_result,
                       coord_cartesian(
                       xlim = NULL,
                       ylim = c(0, NA)) #Y-axis begins at 0
-		
 
 #Save image to file
 fname_base <- "result_id" #Name of file
 extensions = c("png", "pdf")   #File extension
-
 
 for (ext in extensions) {
     fname <- paste(fname_base, ".", ext, sep="")
