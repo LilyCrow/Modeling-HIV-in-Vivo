@@ -45,16 +45,18 @@ pi_id_func <- function(t, PI_ID, params) {
         C_c = 0        #Intracellular concentration
         epsilon_PI = 0 #Instantatneous efficacy
         dT = lambda - d*T - k*T*V_I      #CD4+ T-cells
-        dI = k*T*lagvalue(t - tau)*V_I*lagvalue(t - tau)*exp(-m*tau) - delta*I          #Infected CD4+ T-cells
+        dI = k*T*V_I*exp(-m*tau)         #Infected CD4+ T-cells
         dV_I = N*delta*I*(1 - epsilon_PI) - c*V_I    #Infectious Virions
         dV_NI = N*delta*I*epsilon_PI - c*V_NI        #Non-infectious Virions
     }else if (t >= tau){
+        lag_T = lagvalue(t - tau)[4]
+        lag_V_I = lagvalue(t - tau)[6]
 
             C_b = ((F*D) / (V_d)) * ((k_a)/(k_e - k_a)) * ((exp(-k_e*t)) / ((exp(k_a * I_d)) - 1)) * (1 - (exp(k_e - (k_a * t)))) * (1 - (exp(N_d * k_a * I_d))) + ((exp(k_e * I_d)) - (exp(k_a * I_d))) * ((exp((N_d - 1) * k_e * I_d) - 1) / ((exp(k_e * I_d)) - 1)) - (exp((((N_d - 1) * k_e) + k_a) * I_d))
             C_c = (1 - f_b)*H*C_b
             epsilon_PI = (C_c) / (IC_50_PI + C_c)
             dT = lambda - d*T - k*T*V_I
-            dI = k*T*lagvalue(t - tau)*V_I*lagvalue(t - tau)*exp(-m*tau) - delta*I
+            dI = k*lag_T*lag_V_I*exp(-m*tau) - delta*I
             dV_I = N*delta*I*(1 - epsilon_PI) - c*V_I
             dV_NI = N*delta*I*epsilon_PI - c*V_NI
 }
@@ -148,7 +150,7 @@ plot_result <- ggplot(data = gathered_result,
 		
 
 #Save image to file
-fname_base <- "result_id"  #Name of file
+fname_base <- "result_pi_id"  #Name of file
 extensions = c("png", "pdf")   #File extension
 
 

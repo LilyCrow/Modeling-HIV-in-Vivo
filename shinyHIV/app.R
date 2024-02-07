@@ -6,7 +6,10 @@ source("RTI.R")
 ###Add dashed red line on CD4+ to mark AIDS threshold
 ###summary includes selected options, if 1 year selected "demonstrates withing host dynamics 365 post infection"
 ###make option to view cell counts side by side-- only if scale allows i.e. cd4+ and infected cd4+ on same plot
+###scroll down to learn more about/ view intracellular delay, plots of drug concentration, two compartment (blood and lymphoid tissue) CD8+ focused models
+#####Do i need a vocab section? Where should I put it, new panel? or elsewhere within an existing panel
 
+#####when done, ask Sruthi/ nichols etc. to give to their students, do work sheet, provide feedback
 
 ui <- fluidPage(
 
@@ -17,55 +20,73 @@ ui <- fluidPage(
                         titlePanel("How HIV Works: Between & Within Host(s) Dynamics"),
                         
                         mainPanel(
+                            h3("Background"),
                             "Acquired Immunodeficiency Syndrome, also known as AIDS, was recognized
                              as a new disease in 1981 after a series of young, previously healthy
-                             men died from unusual, and in many cases, rare, infections
-                             and malignancies [20], [7], [4].
-                             On April 23, 1984 
-                             Human Immunodeficiency Virus Type 1 was identified as the virus that causes AIDS [20] https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aids-timeline/#year-1984.
-                             At least 85.6 million people have been infected by HIV over the last 4
-                             decades and 40.4 million have died [23].",
+                             men died from unusual, and in many cases, rare, infection and malignancies [20], [7], [4].
+                             On April 23, 1984 Human Immunodeficiency Virus Type 1 was identified as the virus that causes
+                             AIDS [20] https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aids-timeline/#year-1984.
+                             Since then, at least 85.6 million people have tested positive for HIV
+                             and 40.4 million have died [23].",
                             br(),
                             br(),
                             #"As a sexually transmitted disease",
-                            "HIV is spread, primarily, through sex. Additionally, HIV can
-                             be contracted through exposure to an infected persons bodily fluids. 
-                             Transmission most commonly occurs through contact with an open wound,
-                             perinatally (during pregnancy), from the
-                             use, or accidental use of, an infected persons needle(s) [20].",
+                            "HIV is spread, primarily, through sex. Additionally, HIV can be contracted through
+                             contact with an infect persons bodily fluids like blood, etc. HIV", em("cannot"), "be
+                             contracted through contact with saliva, etc. 
+                             In addition to sex, transmission most commonly occurs through contact with an open wound,
+                             perinatally (during pregnancy), or from sharing needles [20].",
                             br(),
                             br(),
+                            "It is important to acknowledge common misconceptions about HIV, and other STI's/STD's in
+                             general. With the rise of the HIV epidemic, homophobic rhetoric and assumptions led to
+                             dangerous behaviors that impacted both the LGBT+ community and the population at large.
+                             While HIV was initially prominent among the LGBT+ community, due to a multitude of factors,
+                             the virus was equally dangerous for others. Anti-LGBTQ thinking, promoted by interest
+                             groups, schools, and then president, Ronald Reagan, led to heightened cases of HIV/ AIDS
+                             as inaccurate and not scientific information was spread. No matter your sexual orientation,
+                             you can still be affected by HIV, just as you can be by any other disease or infection.",
+                            br(),
+                            br(),
+                            h3("How HIV works"),
                             "HIV results in a chronic, progressive disease that has
                              no cure. HIV is hallmarked by its high viral reproduction rate and
                              destruction of the immune system. The virus targets CD4+ T-cells, a type
-                             of lymphocyte (lymphocytes are white blood cells responsible for riding
-                             the body of invading antigens and infected cells). CD4+ T-cells are
-                             responsible for detecting attacks on the bodies own cells and sending
-                             signals to other 'killer' lymphocytes triggering an immune response.",
+                             of lymphocyte. CD4+ T-cells are responsible for detecting attacks on the
+                             bodies own cells and sending signals to other 'killer' lymphocytes
+                             triggering an immune response.",
                             br(),
+                            #move (lymphocytes are white blood cells responsible for riding
+                            #the body of invading antigens and infected cells) to vocabulary 
                             br(),
                             "Overtime HIV reduces the CD4+ T-cell population to roughly 20% of normal
-                             levels [19]. Such a low T-cell count leaves the body susceptible to
-                             opportunistic infections and cancers. The near total destruction of the
-                             immune system, perpetrated by HIV, makes treating such infections exceptionally
-                             difficult and survival rates plumit.",
+                             levels (normal: ~1,000 cells/mm3 final stage of hiv ~200 cells/mm3) [19].
+                             Such a low T-cell count leaves the body susceptible to opportunistic infections
+                             and cancers. The near total destruction of the immune system, perpetrated by HIV,
+                             makes treating such infections exceptionally difficult and survival rates plummit.",
                             br(),
                             br(),
                             h3("Stages of HIV"),
                             #br(),
-                            "HIV has 3 distinct stages of infection: Acute HIV
-                             Infection, Chronic HIV Infection, and Aquired Immune Deficiency Syndrome. The
-                             state of infection is determined based upon a patient’s CD4+ T-cell count,
-                             viral load, and presenting symptoms.",
+                            "HIV has 3 distinct stages of infection: Acute HIV Infection, Chronic HIV
+                             Infection, and Aquired Immune Deficiency Syndrome. The state of infection
+                             is determined based upon a patient’s CD4+ T-cell count, viral load, and
+                             presenting symptoms.",
                             br(),
+                                        #make stages more organized:?
+                                        #name
+                                        #duration and time start (timeline)
+                                        #cd4+ tcell count
+                                        #viral load
+                                        #presenting symptoms
                             br(),
-                            "Acute HIV Infection: begins 2-4 weeks after the initial
-                             infection, lasting for ~8-10 weeks [12], [8]. Acute infection is hallmarked by
-                             flu-like symptoms that are often accompanied by rash and swollen lymph nodes.
-                             In this time the viral load is very high, as is the likelihood of transmission
-                             [12]. During acute infection the patients CD4+ T-cell count will drop
-                             dramatically[8]. It is at this time that the patient will benefit the most
-                             from beginning antiretroviral treatment.",
+                            "Acute HIV Infection: begins 2-4 weeks after the initial infection, lasting
+                             for ~8-10 weeks [12], [8]. Acute infection is hallmarked by
+                             flu-like symptoms that are often accompanied by rash, persistent cough,
+                             and swollen lymph nodes. In this time the viral load is very high, as is
+                             the likelihood of transmission [12]. During acute infection the patients
+                             CD4+ T-cell count will drop dramatically[8]. It is at this time that the
+                             patient will benefit most from beginning antiretroviral treatment.",
                             br(),
                             br(),
                             "Chronic HIV Infection (also called Asymptomatic HIV or Clinical Latency):
@@ -94,22 +115,31 @@ ui <- fluidPage(
                             br(),
                             fluidRow(
                                 column(7,
-                                       h3(" HIV Viral Lifecycle"),
-                                       "The life cycle of an
-                                       HIV viral particle (either a virus or virion) is as follows: [14]",
+                                       h3("Understanding the HIV Viral Lifecycle"),
+                                       "When a virus enters the body, the first thing it has to do is begin reproducing.
+                                        How a virus replicates looks different for every virus, but for HIV, it looks like
+                                        the following: [14]",
                                        br(),
                                        tags$ol(type = "1",
-                                               tags$li(" Unbound virus or virion circulates in the blood stream;"),
-                                               tags$li(" Virus attaches itself to an uninfected cell;"),
-                                               tags$li(" Virus empties contents (genetic code) into this cell;"),
-                                               tags$li(" HIV RNA is used by the reverse transcriptase enzyme to build HIV DNA;"),
-                                               tags$li(" HIV DNA is then inserted into the cell’s chromosome by the HIV
-                                                        integrase enzyme, establishing HIV infection of the cell;"),
-                                               tags$li(" The infected cell reproduces, activating HIV DNA which makes
-                                                        new raw material for new viral particles (virions);"),
-                                               tags$li(" Material packets for the new virus come together;"),
-                                               tags$li(" The immature virus breaks free of infected cell and enters the blood stream;"),
-                                               tags$li(" New virus matures and is now capable of infecting healthy cells."))),
+                                               tags$li("An unbound, or free floating, HIV viral particle, sometimes referred
+                                                        to as a virion, circulates in the blood stream;"),
+                                               tags$li("The unbound virus attaches itself to an uninfected CD4+ T-cell;"),
+                                                        #, the cell is now infected
+                                               tags$li("The virus empties its contents— genetic code in the form of RNA—
+                                                        into the uninfected cell;"), #, the cell is now infected
+                                               tags$li("An enzyme called reverse transcriptase takes the HIV RNA and
+                                                        turns it into DNA, preparing the viral genetic code to be built
+                                                        into the cells DNA;"), #\emph{cells}?
+                                               tags$li("The integrase enzyme inserts the HIV DNA into the cell’s chromosome,
+                                                        establishing HIV infection in the cell;"),
+                                               tags$li("The infected cell reproduces, activating HIV DNA which makes
+                                                        material for new viral particles (virions), instead of new
+                                                        T-cells;"),
+                                               tags$li("Material packets for the new virus come together;"),
+                                               tags$li("The immature viral particles break free of the infected cell
+                                                        and enter the blood stream;"),
+                                               tags$li("The new viral particles mature and are now capable of infecting
+                                                        healthy cells."))),
                                 column(5,
                                        img(src = "lifeCycle.png", height = 450, width = 600)))
                             )),

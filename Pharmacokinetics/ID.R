@@ -2,10 +2,6 @@ library(deSolve)
 library(ggplot2)
 library(tidyr)
 
-####################################################################
-###TODO: FIND OUT HOW TO USE CURRENT TIME FOR INTRACELLULAR DELAY###
-####################################################################
-
 # rti_func is the function on the right hand side of the
 # differential equation. 
 id_func <- function(t, ID, params) {
@@ -27,7 +23,7 @@ id_func <- function(t, ID, params) {
     if (t < tau){
         #t < tau cells still get infected but don't yet produce virions (take time for cell cycle)
         dT = lambda - d*T - k*T*V
-        dI = k*T*V*exp(-m*tau)
+        dI = k*T*V*exp(-m*tau) - delta*I
         #dV = ifelse(lagvalue(t - 1)[3] - c*V < 0, 0, -c*V)
         dV = -c*V
        
